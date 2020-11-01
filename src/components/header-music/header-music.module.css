@@ -1,3 +1,31 @@
 .header-music {
-  background: green;
+  background-image: url('./header-photo.png');
+  max-width: 1285px;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+}
+.app__header-music {
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
+.header-block {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  padding: 8px 20px 8px 20px;
+  margin-bottom: 10px;
+}
+.header-block:last-child {
+  margin: 0;
+}
+.header-block_ul {
+  margin: 0;
+  padding-left: 0;
+}
+.header-link {
+  border: 2px solid #ffffff;
+  border-radius: 30px;
 }

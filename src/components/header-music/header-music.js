@@ -1,8 +1,58 @@
-import logo from '../../logo.svg';
-import cx from 'classnames';
 import styles from './header-music.module.css';
+import Banner from '../banner/index';
+import cn from 'classnames';
+import Turbina from '../turbina/index';
+
 function HeaderMusic() {
-  return <div className={styles.headerMusic}>ыыыы</div>;
+  return (
+    <>
+      <div className={cn(styles['header-music'], styles['app__header-music'])}>
+        <Banner />
+        <ul className={cn(styles['header-block_ul'])}>
+          <li className={styles['header-block']}>
+            <a
+              href="/"
+              className={cn(styles['header-block'], styles['header-link'])}
+            >
+              {' '}
+              Яндекс.Музыка '↗'
+            </a>
+          </li>
+          <li className={styles['header-block']}>
+            {' '}
+            <a
+              href="/"
+              className={cn(styles['header-block'], styles['header-link'])}
+            >
+              {' '}
+              Spotify '↗'
+            </a>
+          </li>
+          <li className={styles['header-block']}>
+            {' '}
+            <a
+              href="/"
+              className={cn(styles['header-block'], styles['header-link'])}
+            >
+              {' '}
+              Apple Music '↗'
+            </a>
+          </li>
+          <li className={styles['header-block']}>
+            {' '}
+            <a
+              href="/"
+              className={cn(styles['header-block'], styles['header-link'])}
+            >
+              {' '}
+              VK Music '↗'
+            </a>
+          </li>
+        </ul>
+        <Turbina />
+      </div>
+    </>
+  );
 }
 
 export default HeaderMusic;
