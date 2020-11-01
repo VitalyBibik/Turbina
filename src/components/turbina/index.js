@@ -5,24 +5,18 @@ import MobileBanner from './Turbina-mobile.png';
 
 const Turbina = ({ img = DefaultBanner, phoneImg = MobileBanner }) => (
   <div className={styles.banner}>
-    <img src={img} className={styles.banner} />
     <picture className={styles['picture-banner']}>
       <source
-        srcSet={img}
-        className={styles.img}
+        srcSet={phoneImg}
         media="(min-width: 320px) and (max-width:700px)"
       />
-      <source
-        srcSet={phoneImg}
-        className={styles.img}
-        media="(min-width: 701px)"
-      />
+      <img srcSet={img} alt="Full Logo" />
     </picture>
   </div>
 );
 
 /*
- <img src={img} className={styles.img}/>
+
 
     Это должно быть внутри тут
 */

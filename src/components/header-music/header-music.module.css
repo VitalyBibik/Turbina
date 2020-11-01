@@ -1,14 +1,7 @@
 .header-music {
-  background-image: url('./header-photo.png');
-  max-width: 1285px;
-  background-repeat: no-repeat;
   display: flex;
   justify-content: space-between;
   text-align: right;
-}
-.app__header-music {
-  padding-bottom: 30px;
-  padding-top: 20px;
 }
 
 .header-block {
@@ -28,4 +21,13 @@
 .header-link {
   border: 2px solid #ffffff;
   border-radius: 30px;
+}
+.container {
+  background-image: url('./header-photo.png');
+  background-repeat: no-repeat;
+  max-width: 1285px;
+}
+.container__header-music {
+  padding-bottom: 30px;
+  padding-top: 20px;
 }

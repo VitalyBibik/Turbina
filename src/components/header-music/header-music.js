@@ -5,8 +5,13 @@ import Turbina from '../turbina/index';
 
 function HeaderMusic() {
   return (
-    <>
-      <div className={cn(styles['header-music'], styles['app__header-music'])}>
+    <div className={styles['container']}>
+      <div
+        className={cn(
+          styles['header-music'],
+          styles['container__header-music']
+        )}
+      >
         <Banner />
         <ul className={cn(styles['header-block_ul'])}>
           <li className={styles['header-block']}>
@@ -49,9 +54,9 @@ function HeaderMusic() {
             </a>
           </li>
         </ul>
-        <Turbina />
       </div>
-    </>
+      <Turbina />
+    </div>
   );
 }
 
