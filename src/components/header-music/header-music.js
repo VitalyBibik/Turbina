@@ -13,7 +13,7 @@ function HeaderMusic() {
         )}
       >
         <Banner />
-        <ul className={cn(styles['header-block_ul'])}>
+        <ul className={cn(styles['header-block-ul'])}>
           <li className={styles['header-block']}>
             <a
               href="/"
