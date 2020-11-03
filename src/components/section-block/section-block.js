@@ -10,7 +10,7 @@ function SectionBlock({ sectionBlock }) {
         {item.text.length > 1 ? (
           item.text.map((item) => <SectionText text={item} />)
         ) : (
-          <SectionText SectionText={item.text[0]} />
+          <SectionText text={item.text[0]} />
         )}
       </div>
     );
