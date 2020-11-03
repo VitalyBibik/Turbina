@@ -6,7 +6,7 @@ function SectionBlock({ sectionBlock }) {
   return sectionBlock.map((item) => {
     <div className={styles['section-block']}>
       <SectionTitle title={item.title} />
-      item.text.length > 1 ? return item.text.map((item) =>
+      item.text.length > 1 ? item.text.map((item) =>
       {<SectionText text={item} />} : <SectionText SectionText={item.text} /> }
     </div>;
   });
