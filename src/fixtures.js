@@ -26,4 +26,3 @@ const mainPageText = [
   },
 ];
 export { mainPageText };
-// TODO сделать рендер по другому, сейчас рендерит если есть массив
