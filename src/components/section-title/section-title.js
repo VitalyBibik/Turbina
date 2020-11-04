@@ -2,8 +2,7 @@ import styles from './section-title.module.css';
 import cn from 'classnames';
 
 function SectionTitle({ title }) {
-  console.log('TitleSuccess'); // Тут получаем заголовок
-  return <h1 className={styles['section-title']}>{title}</h1>;
+  return <h2 className={styles['section-title']}>{title}</h2>;
 }
 
 export default SectionTitle;
