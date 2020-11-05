@@ -1,11 +1,17 @@
 import React from 'react';
-import { Formik } from 'formik';
+import { Field, Formik } from 'formik';
+import styles from './form.module.css';
 
 const Form = () => (
-  <div>
-    <h1>Anywhere in your app!</h1>
+  <div className={styles.form}>
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={{
+        fullName: '',
+        mobilePhone: '',
+        email: '',
+        userText: '',
+        checked: [],
+      }}
       validate={(values) => {
         const errors = {};
         if (!values.email) {
@@ -36,23 +42,49 @@ const Form = () => (
       }) => (
         <form onSubmit={handleSubmit}>
           <input
+            type="text"
+            name="fullName"
+            placeholder="Имя и фамилия автора"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.fullName}
+          />
+          {errors.fullName && touched.fullName && errors.fullName}
+          <input
+            type="tel"
+            name="mobilePhone"
+            placeholder="Телефон"
+            minLength="11"
+            maxLength="18"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.mobilePhone}
+          />
+          {errors.mobilePhone && touched.mobilePhone && errors.mobilePhone}
+          <input
             type="email"
             name="email"
+            placeholder="Почта"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
           />
           {errors.email && touched.email && errors.email}
           <input
-            type="password"
-            name="password"
+            type="text"
+            name="fullName"
+            placeholder="Стихи"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.password}
+            value={values.userText}
           />
-          {errors.password && touched.password && errors.password}
+          {errors.userText && touched.userText && errors.userText}
+          <label>
+            <Field type="checkbox" name="toggle" />
+            {`Согласен с офертой `}
+          </label>
           <button type="submit" disabled={isSubmitting}>
-            Submit
+            Отправить форму
           </button>
         </form>
       )}
