@@ -86,7 +86,7 @@ const Form = () => (
           required
         />
         {errors.userText && touched.userText && errors.userText}
-        <label>
+        <label className={styles['form__check']}>
           <Field
             type="checkbox"
             name="toggle"
@@ -94,14 +94,13 @@ const Form = () => (
             required
           />
           {
-            <p>
+            <p className={styles['form__text']}>
               Согласен с{' '}
               <a href={'/'} className={styles['form__link']}>
                 офертой
               </a>
             </p>
-          }{' '}
-          /* TODO Заменить на LINK */
+          }
         </label>
         <button
           type="submit"
