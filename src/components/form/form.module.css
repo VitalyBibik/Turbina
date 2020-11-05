@@ -1,4 +1,35 @@
 .form {
   padding-bottom: 50px;
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+.form__input {
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  max-width: 600px;
+  min-height: 60px;
+}
+.form__ellipse {
+  border: 2px solid #000;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.form__button {
+  border: 2px solid #000;
+  border-radius: 30px;
+  max-width: 600px;
+  min-height: 60px;
+  background: #fff;
+  margin-top: 43px;
+  cursor: pointer;
+}
+.form__link {
+  color: #000;
+  font-size: 16px;
+  line-height: 22px;
+  cursor: pointer;
 }
