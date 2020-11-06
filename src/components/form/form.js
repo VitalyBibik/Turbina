@@ -93,6 +93,7 @@ const Form = () => (
             className={styles['form__ellipse']}
             required
           />
+          <span className={styles['form__span']}></span>
           {
             <p className={styles['form__text']}>
               Согласен с{' '}
