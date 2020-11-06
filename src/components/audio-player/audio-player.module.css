@@ -126,11 +126,13 @@
   display: none;
 }
 
+.info {
+  margin-bottom: 30px;
+}
 .info__play {
   display: grid;
   grid-template-columns: 1fr max-content;
   grid-column-gap: 20px;
-  margin-bottom: 30px;
 }
 
 .info-block__title {
