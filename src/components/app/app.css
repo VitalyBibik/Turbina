@@ -1,2 +1,16 @@
 .App {
+  font-family: Inter, sans-serif, Arial;
+  font-style: normal;
+  font-weight: normal;
+  background-color: #000;
+}
+.test {
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 1260px;
+  padding-top: 110px;
+  background-color: #fff;
+  border-radius: 8px;
+  position: relative;
+  bottom: 10px;
 }
