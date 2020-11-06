@@ -2,6 +2,9 @@
   font-family: Inter, sans-serif, Arial;
   font-style: normal;
   font-weight: normal;
+  margin: 0 auto;
+  max-width: 1440px;
+  background: #333;
 }
 .test {
   margin-left: 10px;
