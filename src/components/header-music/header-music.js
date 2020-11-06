@@ -2,6 +2,8 @@ import styles from './header-music.module.css';
 import Banner from '../banner/index';
 import cn from 'classnames';
 import Turbina from '../turbina/index';
+import SoundPlayer from '../audio-player/index';
+import { audioTracks } from '../../fixtures';
 
 function HeaderMusic() {
   return (
@@ -56,6 +58,7 @@ function HeaderMusic() {
         </ul>
       </div>
       <Turbina />
+      <SoundPlayer />
     </div>
   );
 }
