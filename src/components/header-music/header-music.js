@@ -22,7 +22,7 @@ function HeaderMusic() {
               className={cn(styles['header-block'], styles['header-link'])}
             >
               {' '}
-              Яндекс.Музыка '↗'
+              Яндекс.Музыка &#8599;
             </a>
           </li>
           <li className={styles['header-block']}>
@@ -32,7 +32,7 @@ function HeaderMusic() {
               className={cn(styles['header-block'], styles['header-link'])}
             >
               {' '}
-              Spotify '↗'
+              Spotify &#8599;
             </a>
           </li>
           <li className={styles['header-block']}>
@@ -42,7 +42,7 @@ function HeaderMusic() {
               className={cn(styles['header-block'], styles['header-link'])}
             >
               {' '}
-              Apple Music '↗'
+              Apple Music &#8599;
             </a>
           </li>
           <li className={styles['header-block']}>
@@ -52,7 +52,7 @@ function HeaderMusic() {
               className={cn(styles['header-block'], styles['header-link'])}
             >
               {' '}
-              VK Music '↗'
+              VK Music &#8599;
             </a>
           </li>
         </ul>
