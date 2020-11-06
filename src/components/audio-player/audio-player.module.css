@@ -16,18 +16,15 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
-  color: #ffffff;
+  color: #fff;
   padding-bottom: 15px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .timer {
   font-size: 20px;
   line-height: 24px;
   text-align: right;
-  color: #ffffff;
+  color: #fff;
   margin-left: 25px;
 }
 
@@ -206,10 +203,4 @@
     linear-gradient(330deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
     linear-gradient(90deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
   background-color: #f6f8f4;
-}
-
-@media screen and (max-width: 500px) {
-  .info__play {
-    grid-template-columns: max-content;
-  }
 }
