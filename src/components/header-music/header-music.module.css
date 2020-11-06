@@ -11,6 +11,13 @@
   padding: 8px 20px 8px 20px;
   margin-bottom: 10px;
 }
+.header-block_mobile {
+  display: none;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  margin-right: 0;
+}
+
 .header-block:last-child {
   margin: 0;
 }
@@ -30,4 +37,10 @@
 .container__header-music {
   padding-bottom: 30px;
   padding-top: 20px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 550px) {
+  .header-block_mobile {
+    display: inline;
+  }
 }
