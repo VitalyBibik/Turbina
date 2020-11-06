@@ -12,7 +12,6 @@
 }
 
 .treck-info {
-  max-width: 100%;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -137,15 +136,15 @@
 .info-block__title {
   font-style: italic;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .info-block__text {
   font-style: italic;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 20px;
+  line-height: 27px;
 }
 
 .info-block__list {
@@ -155,8 +154,8 @@
 
 .info-block__item {
   font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 24px;
   cursor: pointer;
 }
 
@@ -203,4 +202,105 @@
     linear-gradient(330deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
     linear-gradient(90deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
   background-color: #f6f8f4;
+}
+
+@media screen and (max-width: 1023px) {
+  .treck-info {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .info-block__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .info-block__text {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .info-block__item {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .timer {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .button {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .icon_type_play {
+    width: 18px;
+    height: 15px;
+  }
+
+  .icon_type_pause {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .treck-info {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .info-block__title {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .info-block__text {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .info-block__item {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .timer {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .blocks {
+    margin-bottom: 20px;
+  }
+
+  .button {
+    min-width: 100%;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .info__play {
+    grid-template-columns: 1fr;
+  }
+
+  .icon_type_open {
+    height: 16px;
+  }
+
+  .icon_type_close {
+    height: 16px;
+  }
+
+  .icon_type_play {
+    width: 16px;
+    height: 13px;
+  }
+
+  .icon_type_pause {
+    width: 13px;
+    height: 13px;
+  }
 }
