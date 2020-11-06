@@ -32,7 +32,7 @@
 .container {
   background-image: url('./header-photo.png');
   background-repeat: no-repeat;
-  max-width: 1285px;
+  background-size: cover;
 }
 .container__header-music {
   padding-bottom: 30px;
