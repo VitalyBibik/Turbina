@@ -15,6 +15,14 @@ function HeaderMusic() {
         )}
       >
         <Banner />
+        <button
+          className={cn(
+            styles['header-music__button'],
+            styles['header-block_mobile']
+          )}
+        >
+          Стриминги
+        </button>
         <ul className={cn(styles['header-block-ul'])}>
           <li className={styles['header-block']}>
             <a
@@ -54,17 +62,6 @@ function HeaderMusic() {
               {' '}
               VK Music &#8599;
             </a>
-          </li>
-          <li className={cn(styles['header-block'])}>
-            <p
-              className={cn(
-                styles['header-link'],
-                styles['header-block_mobile'],
-                styles['header-block']
-              )}
-            >
-              Стриминги
-            </p>
           </li>
         </ul>
       </div>
