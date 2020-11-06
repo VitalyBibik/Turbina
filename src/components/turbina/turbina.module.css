@@ -3,7 +3,7 @@
   margin: 0 auto;
 }
 .header-music__banner {
-  padding-bottom: 275px;
+  padding-bottom: 179px;
   padding-top: 100px;
 }
 .img {
@@ -32,7 +32,7 @@
     width: 270px;
   }
   .header-music__banner {
-    padding-bottom: 270px;
+    padding-bottom: 179px;
     padding-top: 245px;
   }
 }
@@ -42,7 +42,6 @@
     width: 500px;
   }
   .header-music__banner {
-    padding-bottom: 390px;
-    padding-top: 286px;
+    padding-bottom: 179px;
   }
 }
