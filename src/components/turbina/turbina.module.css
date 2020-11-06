@@ -2,7 +2,10 @@
   width: 861px;
   margin: 0 auto;
 }
-
+.header-music__banner {
+  padding-bottom: 275px;
+  padding-top: 100px;
+}
 .img {
   object-fit: cover;
   width: 100%;
@@ -11,4 +14,35 @@
 
 .picture-banner {
   display: block;
+  text-align: center;
+}
+
+@media screen and (max-width: 867px) {
+  .banner {
+    width: 620px;
+  }
+  .header-music__banner {
+    padding-bottom: 230px;
+    padding-top: 77px;
+  }
+}
+
+@media screen and (min-width: 320px) AND (max-width: 500px) {
+  .banner {
+    width: 270px;
+  }
+  .header-music__banner {
+    padding-bottom: 270px;
+    padding-top: 245px;
+  }
+}
+
+@media screen and (min-width: 500px) AND (max-width: 620px) {
+  .banner {
+    width: 500px;
+  }
+  .header-music__banner {
+    padding-bottom: 390px;
+    padding-top: 286px;
+  }
 }
