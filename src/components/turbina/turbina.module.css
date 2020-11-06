@@ -4,7 +4,6 @@
 }
 .header-music__banner {
   padding-bottom: 179px;
-  padding-top: 100px;
 }
 .img {
   object-fit: cover;
@@ -23,7 +22,6 @@
   }
   .header-music__banner {
     padding-bottom: 230px;
-    padding-top: 77px;
   }
 }
 
@@ -33,7 +31,6 @@
   }
   .header-music__banner {
     padding-bottom: 179px;
-    padding-top: 245px;
   }
 }
 
