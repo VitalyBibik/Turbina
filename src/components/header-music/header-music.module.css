@@ -49,7 +49,7 @@
 }
 .container__header-music {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding-bottom: 30px;
   padding-top: 20px;
 }
@@ -61,5 +61,8 @@
   .header-link {
     font-size: 12px;
     line-height: 15px;
+  }
+  .header-block-ul {
+    display: none;
   }
 }
