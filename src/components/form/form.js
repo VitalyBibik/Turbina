@@ -96,7 +96,7 @@ const Form = () => (
           <span className={styles['form__span']}></span>
           {
             <p className={styles['form__text']}>
-              Согласен с{' '}
+              Согласен с
               <a href={'/'} className={styles['form__link']}>
                 офертой
               </a>

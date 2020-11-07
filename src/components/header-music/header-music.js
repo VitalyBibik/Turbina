@@ -5,6 +5,7 @@ import Turbina from '../turbina/index';
 import SoundPlayer from '../audio-player/index';
 import React, { useState } from 'react';
 import { audioTracks } from '../../fixtures';
+import BannerExit from './header-exit.png';
 
 function HeaderMusic() {
   const [open, setOpen] = useState(false);
@@ -22,11 +23,12 @@ function HeaderMusic() {
           <button
             className={cn(
               styles['header-music__button'],
-              styles['header-block_mobile']
+              styles['header-block_mobile'],
+              open ? styles['menu__burger'] : null
             )}
             onClick={() => setOpen(!open)}
           >
-            Стриминги
+            {open ? '' : 'Стриминги'}
           </button>
           <ul
             className={cn(
