@@ -23,6 +23,7 @@ function HeaderMusic() {
           <button
             className={cn(
               styles['header-music__button'],
+              styles['header-block'],
               styles['header-block_mobile'],
               open ? styles['menu__burger'] : null
             )}
@@ -33,7 +34,7 @@ function HeaderMusic() {
           <ul
             className={cn(
               styles['header-block-ul'],
-              open ? styles['open'] : null
+              open ? styles['header-block__open'] : null
             )}
           >
             <li className={styles['header-block']}>
