@@ -73,6 +73,7 @@
     right: 0;
   }
   .header-link {
+    font-family: Inter, Helvetica, Arial, sans-serif;
     font-size: 12px;
     line-height: 15px;
   }
