@@ -5,7 +5,6 @@ import React from 'react';
 import Form from '../form';
 
 function SectionForm({ form }) {
-  console.log(form.formText[0].text[0], 'f');
   return (
     <div className={styles['section-form']}>
       <SectionTitle title={form.formText[0].title} />
