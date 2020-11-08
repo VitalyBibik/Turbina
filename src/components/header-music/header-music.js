@@ -34,7 +34,7 @@ function HeaderMusic() {
           <ul
             className={cn(
               styles['header-block-ul'],
-              open ? styles['header-block__open'] : null
+              open ? styles['header-block-ul__open'] : null
             )}
           >
             <li className={styles['header-block']}>
