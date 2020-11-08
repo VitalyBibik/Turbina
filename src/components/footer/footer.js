@@ -9,6 +9,7 @@ function Footer() {
         Сделано студентами{' '}
         <a
           href="https://praktikum.yandex.ru/"
+          target="_blank"
           className={styles['footer__link']}
         >
           Яндекс.Практикум
