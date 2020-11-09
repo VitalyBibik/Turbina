@@ -35,12 +35,6 @@ const mainPageText = {
       text: ['Заполняя эту форму, вы становитесь частью проекта.'],
     },
   ],
-  Buttons: [
-    {
-      id: 1,
-      textButton: 'Хочу быть частью проекта',
-    },
-  ],
 };
 
 const audioTracks = [

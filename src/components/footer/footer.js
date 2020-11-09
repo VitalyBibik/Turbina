@@ -11,6 +11,7 @@ function Footer() {
         <a
           href="https://praktikum.yandex.ru/"
           target="_blank"
+          rel="noreferrer"
           className={styles['footer__link']}
         >
           Яндекс.Практикум
