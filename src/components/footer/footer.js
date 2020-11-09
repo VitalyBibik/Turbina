@@ -3,26 +3,33 @@ import React from 'react';
 // TODO переписать на цикл получения с конфига
 
 function Footer({ config }) {
-  console.log(
-    'config',
-    config.footerLogo.map((element) => {
-      console.log(element);
-    })
-  );
+  const author = config.footerLogo.map((element) => {
+    return (
+      <h3 className={styles['footer__text']} key={element.id}>
+        {' '}
+        {element.author}{' '}
+      </h3>
+    );
+  });
+
+  const footerLink = config.footerLinks.map((element, id) => {
+    return (
+      <a
+        key={element.id}
+        href={element.link}
+        target="_blank"
+        rel="noreferrer"
+        className={styles['footer__link']}
+      >
+        {element.name}
+      </a>
+    );
+  });
+
   return (
     <div className={styles['footer']}>
-      <h3 className={styles['footer__text']}>© Маршак, 2020.</h3>
-      <p className={styles['footer__text']}>
-        Сделано студентами{' '}
-        <a
-          href="https://praktikum.yandex.ru/"
-          target="_blank"
-          rel="noreferrer"
-          className={styles['footer__link']}
-        >
-          Яндекс.Практикум
-        </a>
-      </p>
+      {author}
+      <p className={styles['footer__text']}>Сделано студентами {footerLink}</p>
     </div>
   );
 }
