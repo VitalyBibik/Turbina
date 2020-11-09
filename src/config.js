@@ -12,6 +12,11 @@ const config = {
     },
     {
       id: 3,
+      name: 'Apple Music &#8599;',
+      link: '/',
+    },
+    {
+      id: 4,
       name: 'VK Music &#8599;',
       link: '/',
     },

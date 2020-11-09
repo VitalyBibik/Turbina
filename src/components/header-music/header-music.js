@@ -4,10 +4,24 @@ import cn from 'classnames';
 import Turbina from '../turbina/index';
 import SoundPlayer from '../audio-player/index';
 import React, { useState } from 'react';
-// TODO переписать на цикл получения с конфига
 
-function HeaderMusic() {
+function HeaderMusic({ stream }) {
   const [open, setOpen] = useState(false);
+
+  const linkRender = stream.map((element) => {
+    return (
+      <li className={styles['header-block']} key={element.id}>
+        <a
+          href={element.link}
+          target="_blank"
+          rel="noreferrer"
+          className={cn(styles['header-block'], styles['header-link'])}
+        >
+          {element.name}
+        </a>
+      </li>
+    );
+  });
 
   return (
     <div className={styles['container']}>
@@ -36,39 +50,7 @@ function HeaderMusic() {
               open ? styles['header-block-ul__open'] : null
             )}
           >
-            <li className={styles['header-block']}>
-              <a
-                href="/"
-                target="_blank"
-                className={cn(styles['header-block'], styles['header-link'])}
-              >
-                Яндекс.Музыка &#8599;
-              </a>
-            </li>
-            <li className={styles['header-block']}>
-              <a
-                href="/"
-                className={cn(styles['header-block'], styles['header-link'])}
-              >
-                Spotify &#8599;
-              </a>
-            </li>
-            <li className={styles['header-block']}>
-              <a
-                href="/"
-                className={cn(styles['header-block'], styles['header-link'])}
-              >
-                Apple Music &#8599;
-              </a>
-            </li>
-            <li className={styles['header-block']}>
-              <a
-                href="/"
-                className={cn(styles['header-block'], styles['header-link'])}
-              >
-                VK Music &#8599;
-              </a>
-            </li>
+            {linkRender}
           </ul>
         </div>
       </div>
