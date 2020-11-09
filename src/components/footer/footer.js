@@ -1,6 +1,5 @@
 import styles from './footer.module.css';
 import React from 'react';
-// TODO переписать на цикл получения с конфига
 
 function Footer({ config }) {
   const author = config.footerLogo.map((element) => {
