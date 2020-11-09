@@ -2,7 +2,8 @@ import styles from './footer.module.css';
 import React from 'react';
 // TODO переписать на цикл получения с конфига
 
-function Footer() {
+function Footer({ config }) {
+  console.log('config', config);
   return (
     <div className={styles['footer']}>
       <h3 className={styles['footer__text']}>© Маршак, 2020.</h3>
