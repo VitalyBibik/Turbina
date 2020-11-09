@@ -12,7 +12,7 @@ function Footer({ config }) {
     );
   });
 
-  const footerLink = config.footerLinks.map((element, id) => {
+  const footerLink = config.footerLinks.map((element) => {
     return (
       <a
         key={element.id}
