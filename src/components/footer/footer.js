@@ -3,7 +3,12 @@ import React from 'react';
 // TODO переписать на цикл получения с конфига
 
 function Footer({ config }) {
-  console.log('config', config);
+  console.log(
+    'config',
+    config.footerLogo.map((element) => {
+      console.log(element);
+    })
+  );
   return (
     <div className={styles['footer']}>
       <h3 className={styles['footer__text']}>© Маршак, 2020.</h3>
