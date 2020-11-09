@@ -5,9 +5,12 @@
   flex-direction: column;
   font-family: Inter, Helvetica, Arial, sans-serif;
 }
+.test {
+  color: #ff0000;
+}
 .form__input {
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #000;
   margin-bottom: 10px;
   max-width: 600px;
   min-height: 60px;

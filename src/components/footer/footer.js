@@ -10,7 +10,6 @@ function Footer({ config }) {
       </h3>
     );
   });
-
   const footerLink = config.footerLinks.map((element) => {
     return (
       <a

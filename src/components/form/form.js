@@ -12,17 +12,24 @@ const Form = () => (
       checked: [],
     }}
     validate={(values) => {
+      // TODO сделать валидацию нормальную + добавить после кнопки поле с ошибками
       const errors = {};
-      if (!values.email) {
-        errors.email = 'Required';
+      if (
+        !values.email ||
+        !values.fullName ||
+        !values.mobilePhone ||
+        !values.userText
+      ) {
+        errors.email = 'Обязательное поле';
       } else if (
         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
       ) {
-        errors.email = 'Invalid email address';
+        errors.email = 'Неверный Email адресс';
       }
       return errors;
     }}
     onSubmit={(values, { setSubmitting }) => {
+      // TODO сделать смену надписи
       setTimeout(() => {
         alert(JSON.stringify(values, null, 2));
         setSubmitting(false);
@@ -50,7 +57,10 @@ const Form = () => (
           value={values.fullName}
           required
         />
-        {errors.fullName && touched.fullName && errors.fullName}
+        <span className={styles['test']}>
+          {' '}
+          {errors.fullName && touched.fullName && errors.fullName}{' '}
+        </span>
         <input
           className={styles['form__input']}
           type="tel"
@@ -63,7 +73,10 @@ const Form = () => (
           value={values.mobilePhone}
           required
         />
-        {errors.mobilePhone && touched.mobilePhone && errors.mobilePhone}
+        <span className={styles['test']}>
+          {' '}
+          {errors.mobilePhone && touched.mobilePhone && errors.mobilePhone}{' '}
+        </span>
         <input
           className={styles['form__input']}
           type="email"
@@ -74,7 +87,10 @@ const Form = () => (
           value={values.email}
           required
         />
-        {errors.email && touched.email && errors.email}
+        <span className={styles['test']}>
+          {' '}
+          {errors.email && touched.email && errors.email}{' '}
+        </span>
         <input
           className={styles['form__input']}
           type="text"
@@ -85,7 +101,10 @@ const Form = () => (
           value={values.userText}
           required
         />
-        {errors.userText && touched.userText && errors.userText}
+        <span className={styles['test']}>
+          {' '}
+          {errors.userText && touched.userText && errors.userText}{' '}
+        </span>
         <label className={styles['form__check']}>
           <Field
             type="checkbox"
