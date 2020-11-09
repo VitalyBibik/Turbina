@@ -4,8 +4,7 @@ import cn from 'classnames';
 import Turbina from '../turbina/index';
 import SoundPlayer from '../audio-player/index';
 import React, { useState } from 'react';
-import { audioTracks } from '../../fixtures';
-import BannerExit from './header-exit.png';
+// TODO переписать на цикл получения с конфига
 
 function HeaderMusic() {
   const [open, setOpen] = useState(false);
@@ -40,6 +39,7 @@ function HeaderMusic() {
             <li className={styles['header-block']}>
               <a
                 href="/"
+                target="_blank"
                 className={cn(styles['header-block'], styles['header-link'])}
               >
                 Яндекс.Музыка &#8599;
