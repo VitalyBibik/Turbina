@@ -2,22 +2,22 @@ const config = {
   stream: [
     {
       id: 1,
-      name: 'Яндекс.Музыка &#8599;',
+      name: 'Яндекс.Музыка',
       link: '/',
     },
     {
       id: 2,
-      name: 'Spotify &#8599;',
+      name: 'Spotify',
       link: '/',
     },
     {
       id: 3,
-      name: 'Apple Music &#8599;',
+      name: 'Apple Music',
       link: '/',
     },
     {
       id: 4,
-      name: 'VK Music &#8599;',
+      name: 'VK Music',
       link: '/',
     },
   ],
