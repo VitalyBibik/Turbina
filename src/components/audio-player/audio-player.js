@@ -1,12 +1,18 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from './audio-player.module.css';
+import testPicture from './pic.jpg';
 
 function SoundPlayer() {
   return (
     <div className={styles['player']}>
-      <audio id="audio" src=""></audio>
-      <div className={styles['controls']} id="controls">
+      <img
+        className={styles['cover']}
+        src={testPicture}
+        alt={'Иллюстрация для обложки'}
+      />
+
+      <div className={styles['controls']}>
         <span className={cn(styles['icon'], styles['icon_type_play'])}></span>
         <span
           className={cn(
@@ -17,60 +23,56 @@ function SoundPlayer() {
         ></span>
       </div>
 
-      <div className={styles['info']}>
-        <div className={styles['info__play']}>
-          <div className={styles['blocks']}>
-            <div className={styles['description']}>
-              <span className={styles['treck-info']}>
-                {' '}
-                Контур - Хадн Дадн feat. Варя Карпова и Федя Быстров
-              </span>
-              <div>
-                <span className={styles['timer']} id="time">
-                  2:24
-                </span>
-              </div>
-            </div>
-
-            <div className={styles['seekbar']} id="seek">
-              <div className={styles['seekbar__wrap']}>
-                <div className={styles['seekbar__buffer']} id="buffer"></div>
-                <div
-                  className={styles['seekbar__progress']}
-                  id="progress"
-                ></div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles['info__buttons']}>
-            <button
-              className={cn(
-                styles['button'],
-                styles['button_type_releases'],
-                styles['button_is-invisible']
-              )}
-            >
-              Релизы
-            </button>
-            <button
-              className={cn(
-                styles['button'],
-                styles['button_type_text'],
-                styles['button_is-invisible']
-              )}
-            >
-              Текст песни
-            </button>
-          </div>
+      <div className={styles['info-play']}>
+        <div className={styles['description']}>
+          <span className={styles['treck-info']}>
+            {' '}
+            Контур - Хадн Дадн feat. Варя Карпова и Федя Быстров
+          </span>
+          <span className={styles['timer']}>0:00</span>
         </div>
 
+        <div className={styles['seekbar']}>
+          <div className={styles['seekbar__wrap']}>
+            <div className={styles['seekbar__buffer']}></div>
+            <div className={styles['seekbar__progress']}></div>
+          </div>
+        </div>
+      </div>
+
+      <button className={cn(styles['button'], styles['button_type_white'])}>
+        Клип
+      </button>
+
+      <div className={styles['info__buttons']}>
+        <button
+          className={cn(
+            styles['button'],
+            styles['button_color_transparent'],
+            styles['button_type_releases'],
+            styles['button_is-invisible']
+          )}
+        >
+          Релизы
+        </button>
+        <button
+          className={cn(
+            styles['button'],
+            styles['button_type_text'],
+            styles['button_color_transparent'],
+            styles['button_is-invisible']
+          )}
+        >
+          Текст песни
+        </button>
+      </div>
+
+      <div className={styles['info-blocks']}>
         <div
           className={cn(
             styles['info-block'],
             styles['info-block_is-invisible']
           )}
-          id="releases"
         >
           <h2 className={styles['info-block__title']}>Релизы:</h2>
           <ul className={styles['info-block__list']}>
@@ -88,7 +90,6 @@ function SoundPlayer() {
             styles['info-block'],
             styles['info-block_is-invisible']
           )}
-          id="text-song"
         >
           <h2 className={styles['info-block__title']}>Текст песни:</h2>
           <p className={styles['info-block__text']}>
@@ -161,6 +162,7 @@ function SoundPlayer() {
           )}
         ></span>
       </div>
+      <audio className={styles['audio']} src="./audio/BlackMagic.mp3"></audio>
     </div>
   );
 }
