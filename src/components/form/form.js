@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, Formik } from 'formik';
 import styles from './form.module.css';
+import { CreateAndValidate } from '../../utils/validation';
 
 const Form = () => (
   <Formik
@@ -12,21 +13,7 @@ const Form = () => (
       checked: [],
     }}
     validate={(values) => {
-      // TODO сделать валидацию нормальную + добавить после кнопки поле с ошибками
-      const errors = {};
-      if (
-        !values.email ||
-        !values.fullName ||
-        !values.mobilePhone ||
-        !values.userText
-      ) {
-        errors.email = 'Обязательное поле';
-      } else if (
-        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-      ) {
-        errors.email = 'Неверный Email адресс';
-      }
-      return errors;
+      return CreateAndValidate(values);
     }}
     onSubmit={(values, { setSubmitting }) => {
       // TODO сделать смену надписи
