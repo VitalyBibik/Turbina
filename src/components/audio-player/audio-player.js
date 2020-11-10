@@ -5,9 +5,9 @@ import testPicture from './pic.jpg';
 
 function SoundPlayer() {
   return (
-    <div className={styles['player']}>
+    <div className={cn(styles['player'])}>
       <img
-        className={styles['cover']}
+        className={cn(styles['cover'], styles['cover_is-invisible'])}
         src={testPicture}
         alt={'Иллюстрация для обложки'}
       />
@@ -40,7 +40,13 @@ function SoundPlayer() {
         </div>
       </div>
 
-      <button className={cn(styles['button'], styles['button_color_white'])}>
+      <button
+        className={cn(
+          styles['button'],
+          styles['button_color_white'],
+          styles['button_is-invisible']
+        )}
+      >
         Клип
       </button>
 
@@ -49,7 +55,8 @@ function SoundPlayer() {
           className={cn(
             styles['button'],
             styles['button_color_transparent'],
-            styles['button_type_releases']
+            styles['button_type_releases'],
+            styles['button_is-invisible']
           )}
         >
           Релизы

@@ -16,6 +16,10 @@
   object-position: center;
 }
 
+.cover_is-invisible {
+  display: none;
+}
+
 .controls {
   grid-area: controls;
 }
