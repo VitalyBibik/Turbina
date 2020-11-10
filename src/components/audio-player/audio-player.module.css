@@ -180,8 +180,8 @@
   grid-area: info-blocks;
 }
 
-.change-button {
-  grid-area: change-button;
+.change-buttons {
+  grid-area: change-buttons;
 }
 
 .info-block__title {
