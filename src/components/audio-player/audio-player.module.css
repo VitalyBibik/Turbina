@@ -1,16 +1,17 @@
 .player {
   display: grid;
-  grid-gap: 20px;
   grid-template-columns: max-content max-content 1fr max-content max-content max-content;
   grid-template-areas:
     'cover controls  info-play    button-сlip  info-buttons change-buttons'
     'cover   ...    info-blocks   info-blocks       ...           ...     ';
   margin-left: 25px;
   margin-right: 25px;
+  padding-bottom: 30px;
 }
 
 .cover {
   grid-area: cover;
+  margin-right: 20px;
   max-width: 164px;
   max-height: 164px;
   border-radius: 4px;
@@ -24,6 +25,7 @@
 
 .controls {
   grid-area: controls;
+  margin-right: 20px;
 }
 
 .description {
@@ -77,8 +79,9 @@
   width: 0%;
 }
 
-.change-button {
+.change-buttons {
   display: flex;
+  margin-left: 20px;
 }
 
 .button {
@@ -100,6 +103,7 @@
   background-color: transparent;
   color: #fff;
   min-width: 135px;
+  margin-left: 20px;
 }
 
 .button_color_white {
@@ -108,12 +112,14 @@
   width: 87px;
   color: #1d1b1b;
   align-self: start;
+  margin-left: 20px;
 }
 
 .button_color_white::before {
   display: inline-block;
   content: url('./play-black.svg');
-  margin-right: 8px;
+  margin-right: 7px;
+  height: 8px;
 }
 
 .button_is-invisible {
@@ -126,18 +132,16 @@
   display: block;
   padding-top: 5px;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
 
 .icon_type_play {
   background-image: url('./play.png');
-  width: 20px;
-  height: 16px;
 }
 
 .icon_type_pause {
   background-image: url('./pause.png');
-  width: 16px;
-  height: 16px;
 }
 
 .icon_type_open {
@@ -162,9 +166,11 @@
 .info-block {
   color: #fff;
   max-height: 115px;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-color: rgba(255, 255, 255, 0.3) rgba(243, 243, 243, 0.1); /* «цвет ползунка» «цвет полосы скроллбара» */
   scrollbar-width: thin; /* толщина */
+  margin-top: 30px;
+  padding-right: 10px;
 }
 
 .info-block_is-invisible {
@@ -177,7 +183,6 @@
 
 .info-play {
   grid-area: info-play;
-  margin-bottom: 30px;
 }
 
 .info-buttons {
@@ -197,6 +202,8 @@
   font-weight: normal;
   font-size: 20px;
   line-height: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .info-block__text {
@@ -263,7 +270,7 @@
   background-color: #f6f8f4;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1200px) {
   .player {
     grid-template-areas:
       'controls  info-play    info-play    button-сlip    info-buttons change-buttons'
@@ -273,11 +280,12 @@
   .cover {
     max-width: 112px;
     max-height: 112px;
+    margin-top: 30px;
   }
 
   .treck-info {
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 18px;
+    line-height: 22px;
   }
 
   .info-block__title {
@@ -327,14 +335,10 @@
   }
 
   .cover {
-    margin: 0 auto;
+    margin: 0 0 20px 0;
     max-width: 100%;
     max-height: 100%;
-    width: 100%;
-  }
-
-  .button {
-    width: 100%;
+    margin-top: 30px;
   }
 
   .treck-info {
@@ -350,6 +354,7 @@
   .info-block__text {
     font-size: 14px;
     line-height: 19px;
+    padding-right: 20px;
   }
 
   .info-block__item {
@@ -367,30 +372,39 @@
   }
 
   .button {
-    min-width: 100%;
     font-size: 12px;
     line-height: 15px;
+  }
+
+  .button_color_transparent {
+    min-width: 100%;
+    margin-left: 0;
+  }
+
+  .button_color_white {
+    margin-left: 0;
+    margin-right: 20px;
   }
 
   .info__play {
     grid-template-columns: 1fr;
   }
 
-  .icon_type_open {
-    height: 16px;
-  }
-
-  .icon_type_close {
+  .icon {
     height: 16px;
   }
 
   .icon_type_play {
-    width: 16px;
-    height: 13px;
+    width: 14px;
+    height: 14px;
   }
 
   .icon_type_pause {
-    width: 13px;
-    height: 13px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .info-play {
+    margin-right: 0;
   }
 }
