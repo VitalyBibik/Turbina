@@ -34,6 +34,7 @@
 }
 
 .treck-info {
+  font-family: Inter, Helvetica, Arial, sans-serif;
   max-width: 100%;
   font-weight: 500;
   font-size: 20px;
@@ -46,6 +47,7 @@
 }
 
 .timer {
+  font-family: Inter, Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 24px;
   text-align: right;
@@ -85,6 +87,7 @@
 }
 
 .button {
+  font-family: Inter, Helvetica, Arial, sans-serif;
   display: flex;
   box-shadow: 0 0 0 2px #fff;
   border: none;
@@ -198,6 +201,7 @@
 }
 
 .info-block__title {
+  font-family: Inter, Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: normal;
   font-size: 20px;
@@ -207,6 +211,7 @@
 }
 
 .info-block__text {
+  font-family: Inter, Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 500;
   font-size: 20px;
@@ -219,6 +224,7 @@
 }
 
 .info-block__item {
+  font-family: Inter, Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
