@@ -13,14 +13,14 @@ function SoundPlayer() {
       />
 
       <div className={styles['controls']}>
-        <span className={cn(styles['icon'], styles['icon_type_play'])}></span>
+        <span className={cn(styles['icon'], styles['icon_type_play'])} />
         <span
           className={cn(
             styles['icon'],
             styles['icon_type_pause'],
             styles['icon_is-invisible']
           )}
-        ></span>
+        />
       </div>
 
       <div className={styles['info-play']}>
@@ -34,8 +34,8 @@ function SoundPlayer() {
 
         <div className={styles['seekbar']}>
           <div className={styles['seekbar__wrap']}>
-            <div className={styles['seekbar__buffer']}></div>
-            <div className={styles['seekbar__progress']}></div>
+            <div className={styles['seekbar__buffer']} />
+            <div className={styles['seekbar__progress']} />
           </div>
         </div>
       </div>
@@ -159,16 +159,18 @@ function SoundPlayer() {
       </div>
 
       <div className={styles['change-buttons']}>
-        <span className={cn(styles['icon'], styles['icon_type_open'])}></span>
+        <span className={cn(styles['icon'], styles['icon_type_open'])} />
         <span
           className={cn(
             styles['icon'],
             styles['icon_type_close'],
             styles['icon_is-invisible']
           )}
-        ></span>
+        />
       </div>
-      <audio className={styles['audio']} src="./audio/BlackMagic.mp3"></audio>
+      <audio className={styles['audio']} src="./audio/BlackMagic.mp3">
+        Your browser doesn't support the tag "audio"
+      </audio>
     </div>
   );
 }
