@@ -40,7 +40,7 @@ function SoundPlayer() {
         </div>
       </div>
 
-      <button
+      {/* <button
         className={cn(
           styles['button'],
           styles['button_color_white'],
@@ -48,15 +48,23 @@ function SoundPlayer() {
         )}
       >
         Клип
-      </button>
+      </button> */}
+
+      <span
+        className={cn(
+          styles['icon'],
+          styles['icon_type_clip']
+          // styles['icon_is-invisible']
+        )}
+      />
 
       <div className={styles['info-buttons']}>
         <button
           className={cn(
             styles['button'],
             styles['button_color_transparent'],
-            styles['button_type_releases'],
-            styles['button_is-invisible']
+            styles['button_type_releases']
+            // styles['button_is-invisible']
           )}
         >
           Релизы
