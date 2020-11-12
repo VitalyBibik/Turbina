@@ -100,7 +100,14 @@ function SoundPlayer() {
           </ul>
         </div>
 
-        <Scrollbar style={{ width: '100%', height: 115, marginTop: '30px' }}>
+        <Scrollbar
+          style={{
+            width: '100%',
+            height: 115,
+            marginTop: '30px',
+            background: 'red',
+          }}
+        >
           <div
             className={cn(
               styles['info-block']
