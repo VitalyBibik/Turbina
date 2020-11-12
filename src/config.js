@@ -1,9 +1,9 @@
 import audioFile from './components/audio-files/Instrumental_Soon_-_Astronomia_2K19_71386145.mp3';
-import wuTangCream from './components/audio-files/Little_Big_-_UNO_68748523.mp3';
-import blackMagigan from './components/audio-files/blackMagigan.mp3';
+import Little_Big from './components/audio-files/Little_Big_-_UNO_68748523.mp3';
+import blackMagican from './components/audio-files/blackMagican.mp3';
 import riderOfIce from './components/audio-files/riderOfIce.mp3';
-import posterBlackMagigan from './components/audio-files/blackMagigan.jpg';
-import posterRiderOfIce from './components/audio-files/riderOfIce.jpg';
+import posterBlackMagican from './components/audio-files/blackMagican.jpg';
+import poster from './components/audio-files/pic.jpg';
 
 const config = {
   stream: [
@@ -32,28 +32,42 @@ const config = {
     {
       id: 1,
       title: 'Sample',
-      poster: '',
-      performer: '',
+      poster: poster,
+      performer: 'Sample1',
       author: 'Sample',
       audioFile,
-      text: '',
+      text: `Унылая пора! Очей очарованье!
+      Приятна мне твоя прощальная краса —
+      Люблю я пышное природы увяданье,
+      В багрец и в золото одетые леса,
+      В их сенях ветра шум и свежее дыханье,
+      И мглой волнистою покрыты небеса,
+      И редкий солнца луч, и первые морозы,
+      И отдаленные седой зимы угрозы.`,
     },
     {
       id: 2,
       title: 'CREAM',
-      poster: '',
-      performer: '',
-      author: 'Wu-tang',
+      poster: poster,
+      performer: 'Little_Big1',
+      author: 'Little_Big',
       audioFile: wuTangCream,
-      text: '',
+      text: `Октябрь уж наступил — уж роща отряхает
+      Последние листы с нагих своих ветвей;
+      Дохнул осенний хлад — дорога промерзает.
+      Журча еще бежит за мельницу ручей,
+      Но пруд уже застыл; сосед мой поспешает
+      В отъезжие поля с охотою своей,
+      И страждут озими от бешеной забавы,
+      И будит лай собак уснувшие дубравы.`,
     },
     {
       id: 3,
       title: 'Черный маг',
-      poster: posterBlackMagigan,
+      poster: posterBlackMagican,
       performer: 'Эпидемия',
       author: '123g',
-      audioFile: blackMagigan,
+      audioFile: blackMagican,
       text: `Он с детства был слаб, он познал унижения.
       Изгой в этом мире искал силы суть,
       И в книгах волшебных, найдя утешение,
