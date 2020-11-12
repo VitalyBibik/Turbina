@@ -1,5 +1,9 @@
 import audioFile from './components/audio-files/Instrumental_Soon_-_Astronomia_2K19_71386145.mp3';
 import wuTangCream from './components/audio-files/Little_Big_-_UNO_68748523.mp3';
+import blackMagigan from './components/audio-files/blackMagigan.mp3';
+import riderOfIce from './components/audio-files/riderOfIce.mp3';
+import posterBlackMagigan from './components/audio-files/blackMagigan.jpg';
+import posterRiderOfIce from './components/audio-files/riderOfIce.jpg';
 
 const config = {
   stream: [
@@ -26,37 +30,65 @@ const config = {
   ],
   playlist: [
     {
+      id: 1,
       title: 'Sample',
-      text: '',
       poster: '',
       performer: '',
       author: 'Sample',
       audioFile,
-      id: 1,
+      text: '',
     },
     {
-      title: 'CREAM',
-      text: '',
-      poster: '',
-      performer: '',
-      author: 'Wu-tang',
-      audioFile: wuTangCream,
       id: 2,
-    },
-    {
-      title: '123',
-      text: '',
+      title: 'CREAM',
       poster: '',
       performer: '',
-      author: '123g',
-      audioFile: wuTangCream,
-      id: 3,
-    },
-    {
-      title: 'CREAM',
       author: 'Wu-tang',
       audioFile: wuTangCream,
+      text: '',
+    },
+    {
+      id: 3,
+      title: 'Черный маг',
+      poster: posterBlackMagigan,
+      performer: 'Эпидемия',
+      author: '123g',
+      audioFile: blackMagigan,
+      text: `Он с детства был слаб, он познал унижения.
+      Изгой в этом мире искал силы суть,
+      И в книгах волшебных, найдя утешение,
+      Ступил на извилистый магии путь.
+      
+      Он не просил, не просил помочь –
+      Он видел свет, он знал ответ.
+      Он не хотел, не хотел, но ночь
+      В его душе оставит след!
+      
+      Ты Черный Маг – ты обречен,
+      Такая плата, таков закон!`,
+    },
+    {
       id: 4,
+      title: 'Всадник из льда',
+      poster: posterRiderOfIce,
+      performer: 'Эпидемия',
+      author: 'Apl',
+      audioFile: riderOfIce,
+      text: `Застыв на ветру
+      У синего льда,
+      Я скоро умру -
+      Уйду навсегда.
+      
+      Я верил тебе,
+      А сейчас я верю судьбе.
+      Свет погас, ведь солнце зашло
+      Для меня навсегда.
+      Навсегда
+      
+      Я сам погубил -
+      Уже не вернуть.
+      Тебя не хранил,
+      И проклят мой путь.`,
     },
   ],
 
