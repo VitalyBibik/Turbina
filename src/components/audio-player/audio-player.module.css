@@ -255,6 +255,10 @@
   background-color: rgba(123, 154, 255, 0.418);
 }
 
+.trackY {
+  width: 10px;
+}
+
 .track-horizontal {
   position: relative;
   height: 6px;
