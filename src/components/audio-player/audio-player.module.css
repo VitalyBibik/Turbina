@@ -180,12 +180,8 @@
 
 .info-block {
   color: #fff;
-  max-height: 115px;
-  overflow-y: auto;
-  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(243, 243, 243, 0.1); /* «цвет ползунка» «цвет полосы скроллбара» */
-  scrollbar-width: thin; /* толщина */
-  margin-top: 30px;
   padding-right: 10px;
+  width: 100%;
 }
 
 .info-block_is-invisible {
@@ -243,45 +239,45 @@
   font-style: italic;
 }
 
-/* полоса прокрутки (скроллбар) */
-::-webkit-scrollbar {
-  width: 3px; /* ширина для вертикального скролла */
-  background-color: rgba(243, 243, 243, 0.1);
-  border-radius: 9em;
+.track-vertical {
+  top: 2px;
+  bottom: 2px;
+  right: 2px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.111);
+}
+.track-vertical .thumb-vertical {
+  position: relative;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: rgba(123, 154, 255, 0.418);
 }
 
-/* ползунок скроллбара */
-::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 9em;
+.track-horizontal {
+  position: relative;
+  height: 6px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 3px;
+}
+.track-horizontal .thumb-horizontal {
+  position: relative;
+  display: block;
+  height: 100%;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: rgba(125, 149, 255, 0.993);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(230, 230, 230, 0.3);
-}
-
-/* Стрелки */
-
-::-webkit-scrollbar-button:vertical:start:decrement {
-  height: 0;
-}
-
-::-webkit-scrollbar-button:vertical:end:increment {
-  height: 0;
-}
-
-::-webkit-scrollbar-button:horizontal:start:decrement {
-  background: linear-gradient(30deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(150deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(270deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-  background-color: #f6f8f4;
-}
-
-::-webkit-scrollbar-button:horizontal:end:increment {
-  background: linear-gradient(210deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(330deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(90deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
-  background-color: #f6f8f4;
+.view {
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-right: -15px;
+  margin-bottom: -17px !important;
 }
 
 @media screen and (max-width: 1200px) {
