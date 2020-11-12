@@ -105,7 +105,6 @@ function SoundPlayer() {
             width: '100%',
             height: 115,
             marginTop: '30px',
-            background: 'red',
           }}
         >
           <div

@@ -4,6 +4,7 @@ import cn from 'classnames';
 import Turbina from '../turbina/index';
 import SoundPlayer from '../audio-player/index';
 import React, { useState } from 'react';
+import Player from '../player';
 
 function HeaderMusic({ stream }) {
   const [open, setOpen] = useState(false);
@@ -56,6 +57,7 @@ function HeaderMusic({ stream }) {
       </div>
       <Turbina />
       <SoundPlayer />
+      <Player />
     </div>
   );
 }
