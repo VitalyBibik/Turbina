@@ -1,3 +1,6 @@
+import audioFile from './components/audio-files/Instrumental_Soon_-_Astronomia_2K19_71386145.mp3';
+import wuTangCream from './components/audio-files/Little_Big_-_UNO_68748523.mp3';
+
 const config = {
   stream: [
     {
@@ -21,6 +24,42 @@ const config = {
       link: '/',
     },
   ],
+  playlist: [
+    {
+      title: 'Sample',
+      text: '',
+      poster: '',
+      performer: '',
+      author: 'Sample',
+      audioFile,
+      id: 1,
+    },
+    {
+      title: 'CREAM',
+      text: '',
+      poster: '',
+      performer: '',
+      author: 'Wu-tang',
+      audioFile: wuTangCream,
+      id: 2,
+    },
+    {
+      title: '123',
+      text: '',
+      poster: '',
+      performer: '',
+      author: '123g',
+      audioFile: wuTangCream,
+      id: 3,
+    },
+    {
+      title: 'CREAM',
+      author: 'Wu-tang',
+      audioFile: wuTangCream,
+      id: 4,
+    },
+  ],
+
   footerLinks: [
     {
       id: 1,
