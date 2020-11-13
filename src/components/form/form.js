@@ -18,7 +18,7 @@ const Form = () => (
     onSubmit={(values, { setSubmitting }) => {
       // TODO сделать смену надписи
       setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
+        console.log(values, 'Форма отправлена');
         setSubmitting(false);
       }, 400);
     }}
