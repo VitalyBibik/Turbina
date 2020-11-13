@@ -10,6 +10,7 @@ import ButtonClip from '../button-clip';
 
 function SoundPlayer({ playlist }) {
   const [currentTrack, setCurrentTrack] = useState(playlist[0]);
+  const [allTracks, setAllTracks] = useState(playlist);
 
   const [infoReliz, setInfoReliz] = useState(false); // reliz block or text block
   const [infoText, setInfoText] = useState(false); // text
@@ -22,7 +23,7 @@ function SoundPlayer({ playlist }) {
   const [currentTime, setCurrentTime] = useState(0); //  time song
   const [duration, setDuration] = useState(0);
 
-  const isLoggedIn = currentTrack.clip;
+  const isLoggedIn = currentTrack?.clip;
 
   const onTimeUpdate = throttling((e) => {
     setCurrentTime(e.target.currentTime);
@@ -30,16 +31,25 @@ function SoundPlayer({ playlist }) {
 
   const onPlay = (e) => {
     setDuration(e.target.duration);
-    console.log(e.target.duration, 'изначальное время');
-    const ostatok = e.target.duration - e.target.currentTime;
-    console.log(e.target.duration - e.target.currentTime, 'time');
   };
   const onPause = (e) => {
     setDuration(e.target.duration);
-    console.log('start Pause', e);
   };
-  const onTest = (e) => {
+  const onEnded = (e) => {
     console.log('Закончилось', e);
+    console.log(allTracks, 'alltracks');
+    const indexTrack = allTracks.findIndex(
+      (track) => track.id === currentTrack.id
+    );
+    if (indexTrack === allTracks.lastIndex) {
+      alert('end');
+    } else {
+      return setCurrentTrack(allTracks[indexTrack + 1]);
+    }
+    // console.log(indexTrack,'und');
+  };
+  const onCanPLay = (e) => {
+    console.log('CanPLay', e);
   };
   const getTextBlock = (text) => {
     const regExp = /[/a-z']+/;
@@ -134,16 +144,21 @@ function SoundPlayer({ playlist }) {
           >
             <h2 className={styles['info-block__title']}>Релизы:</h2>
             <ul className={styles['info-block__list']}>
-              {playlist.map((item) => (
-                <PlayerItems
-                  item={item}
-                  key={item.id}
-                  onClick={(item) => {
-                    setCurrentTrack(item);
-                    setIsPlaying(false);
-                  }}
-                />
-              ))}
+              {allTracks.map((item) => {
+                if (item.id === currentTrack.id) {
+                  return null;
+                }
+                return (
+                  <PlayerItems
+                    item={item}
+                    key={item.id}
+                    onClick={(item) => {
+                      setCurrentTrack(item);
+                      setIsPlaying(false);
+                    }}
+                  />
+                );
+              })}
             </ul>
           </Scrollbar>
         </div>
@@ -192,7 +207,8 @@ function SoundPlayer({ playlist }) {
         ref={myPlayer}
         onPlay={onPlay}
         onPause={onPause}
-        onEnded={onTest}
+        onCanPlay={onCanPLay}
+        onEnded={onEnded}
         onTimeUpdate={onTimeUpdate}
         loop={false} // Не играет повторно, true играет
         onLoadedData={(_) => {
