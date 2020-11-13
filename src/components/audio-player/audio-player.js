@@ -47,23 +47,22 @@ function SoundPlayer({ playlist }) {
         alt={'Иллюстрация для обложки'}
       />
 
-      <div className={styles['controls']}>
-        <span
-          onClick={(_) => {
-            if (isPlaying) {
-              myPlayer.current.pause();
-              setIsPlaying(false);
-            } else {
-              myPlayer.current.play();
-              setIsPlaying(true);
-            }
-          }}
-          className={cn(
-            styles['icon'],
-            isPlaying ? styles['icon_type_pause'] : styles['icon_type_play']
-          )}
-        />
-      </div>
+      <span
+        onClick={(_) => {
+          if (isPlaying) {
+            myPlayer.current.pause();
+            setIsPlaying(false);
+          } else {
+            myPlayer.current.play();
+            setIsPlaying(true);
+          }
+        }}
+        className={cn(
+          styles['icon'],
+          styles['icon_block_controls'],
+          isPlaying ? styles['icon_type_pause'] : styles['icon_type_play']
+        )}
+      />
 
       <div className={styles['info-play']}>
         <div className={styles['description']}>
@@ -84,23 +83,23 @@ function SoundPlayer({ playlist }) {
       {buttonManagement && isLoggedIn && (
         <ButtonClip clip={currentTrack.clip} />
       )}
-      <div className={styles['info-buttons']}>
-        <button
-          className={cn(
-            styles['button'],
-            styles['button_type_text'],
-            styles['button_color_transparent'],
-            !buttonManagement && styles['button_is-invisible']
-          )}
-          onClick={() => {
-            setInfoButton(!infoButton);
-            setInfoReliz(!infoReliz); // Убираем блок инфо релиз
-            setInfoText(!infoText); // Убираем блок инфо текст
-          }}
-        >
-          {infoButton ? 'Релизы' : 'Текст песни'}
-        </button>
-      </div>
+      <button
+        className={cn(
+          styles['button'],
+          styles['button_block_info'],
+          styles['button_type_text'],
+          styles['button_color_transparent'],
+          !buttonManagement && styles['button_is-invisible']
+        )}
+        onClick={() => {
+          setInfoButton(!infoButton);
+          setInfoReliz(!infoReliz); // Убираем блок инфо релиз
+          setInfoText(!infoText); // Убираем блок инфо текст
+        }}
+      >
+        {infoButton ? 'Релизы' : 'Текст песни'}
+      </button>
+
       <div className={cn(styles['info-blocks'])}>
         <div
           className={cn(
@@ -150,25 +149,25 @@ function SoundPlayer({ playlist }) {
         </div>
       </div>
 
-      <div className={styles['change-buttons']}>
-        <span //Кнопка с крестиком
-          className={cn(
-            styles['icon'],
-            buttonManagement
-              ? styles['icon_type_close']
-              : styles['icon_type_open']
-          )}
-          onClick={() => {
-            setButtonManagement(!buttonManagement); // Меняем слушатель кнопки Релиз/Текст
-            setInfoReliz(!infoReliz); // Убираем блок инфо релиз
-            setInfoText(!infoText); // Убираем блок инфо текст
-            setPosterImg(!posterImg); // НЕ ТРОГАТЬ
-            if (buttonManagement === false) {
-              setButtonManagement(!buttonManagement);
-            }
-          }}
-        />
-      </div>
+      <span //Кнопка с крестиком
+        className={cn(
+          styles['icon'],
+          styles['icon_block_management'],
+          buttonManagement
+            ? styles['icon_type_close']
+            : styles['icon_type_open']
+        )}
+        onClick={() => {
+          setButtonManagement(!buttonManagement); // Меняем слушатель кнопки Релиз/Текст
+          setInfoReliz(!infoReliz); // Убираем блок инфо релиз
+          setInfoText(!infoText); // Убираем блок инфо текст
+          setPosterImg(!posterImg); // НЕ ТРОГАТЬ
+          if (buttonManagement === false) {
+            setButtonManagement(!buttonManagement);
+          }
+        }}
+      />
+
       <audio
         className={styles['audio']}
         src={currentTrack.audioFile}
