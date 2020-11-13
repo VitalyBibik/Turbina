@@ -4,6 +4,10 @@
   text-align: right;
 }
 
+.header-music_type_blur {
+  filter: blur(0);
+}
+
 .header-block {
   color: white;
   list-style: none;
@@ -18,6 +22,7 @@
   border-radius: 30px;
   margin-right: 0;
 }
+
 .header-music__button {
   font-size: 12px;
   line-height: 15px;
@@ -69,6 +74,12 @@
   padding: 10px;
   background-position: center;
   background-size: 80%;
+}
+
+@media screen and (max-width: 699px) {
+  .header-music_type_blur {
+    filter: blur(4px);
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 550px) {

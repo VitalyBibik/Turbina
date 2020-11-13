@@ -33,7 +33,7 @@ const config = {
     {
       id: 1,
       title: 'Super puper track long 2345',
-      clip: '/',
+      clip: '',
       poster: '',
       performer: 'Sample1',
       author: 'Sample',
@@ -50,7 +50,7 @@ const config = {
     {
       id: 2,
       title: 'CREAM',
-      clip: '/',
+      clip: '',
       poster: poster,
       performer: 'Little_Big1',
       author: 'Little_Big',
@@ -67,7 +67,8 @@ const config = {
     {
       id: 3,
       title: 'Черный маг',
-      clip: '',
+      clip:
+        'https://yandex.ru/video/preview?text=%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D0%B3%20%D0%BA%D0%BB%D0%B8%D0%BF&path=wizard&parent-reqid=1605269912739770-387624101159007167800106-production-app-host-man-web-yp-220&wiz_type=vital&filmId=1593296743638318191',
       poster: posterBlackMagican,
       performer: 'Эпидемия',
       author: '123g',
@@ -88,7 +89,7 @@ const config = {
     {
       id: 4,
       title: 'Всадник из льда',
-      youtube: '',
+      youtube: 'https://www.youtube.com/watch?v=r-pXsQXkVCg',
       poster: posterRiderOfIce,
       performer: 'Эпидемия',
       author: 'Apl',
