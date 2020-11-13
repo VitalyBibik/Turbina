@@ -154,7 +154,9 @@ function SoundPlayer({ playlist, onClick }) {
               height: 115,
             }}
           >
-            <h2 className={styles['info-block__title']}>Релизы:</h2>
+            <h2 className={styles['info-block__title']}>
+              {allTracks.length > 1 ? 'Релизы' : 'Пока у нас только 1 релиз'}
+            </h2>
             <ul className={styles['info-block__list']}>
               {allTracks.map((item) => {
                 if (item.id === currentTrack.id) {
