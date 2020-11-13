@@ -33,11 +33,21 @@ function SoundPlayer({ playlist }) {
     console.log(e.target.duration, 'изначальное время');
     const ostatok = e.target.duration - e.target.currentTime;
     console.log(e.target.duration - e.target.currentTime, 'time');
-    setTimeout(() => {}, ostatok);
   };
   const onPause = (e) => {
     setDuration(e.target.duration);
     console.log('start Pause', e);
+  };
+  const onTest = (e) => {
+    console.log('Закончилось', e);
+  };
+  const getTextBlock = (text) => {
+    const regExp = /[/a-z']+/;
+    return text.split('\n').map((str, i) => (
+      <p className={styles['info-block__text']} key={<code>p_${i}</code>}>
+        {str.replace(regExp, '')}
+      </p>
+    ));
   };
 
   return (
@@ -152,7 +162,7 @@ function SoundPlayer({ playlist }) {
             }}
           >
             <h2 className={styles['info-block__title']}>Текст песни:</h2>
-            <p className={styles['info-block__text']}>{currentTrack.text}</p>
+            {getTextBlock(currentTrack.text)}
           </Scrollbar>
         </div>
       </div>
@@ -182,6 +192,7 @@ function SoundPlayer({ playlist }) {
         ref={myPlayer}
         onPlay={onPlay}
         onPause={onPause}
+        onEnded={onTest}
         onTimeUpdate={onTimeUpdate}
         loop={false} // Не играет повторно, true играет
         onLoadedData={(_) => {
