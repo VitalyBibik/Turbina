@@ -59,6 +59,7 @@
   grid-area: change-buttons;
   display: flex;
   margin-left: 20px;
+  align-self: center;
 }
 
 .button {
@@ -147,6 +148,7 @@
 
 .button_block_info {
   grid-area: info-buttons;
+  align-self: center;
 }
 
 .info-blocks {
