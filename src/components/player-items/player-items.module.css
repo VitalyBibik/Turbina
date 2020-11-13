@@ -10,3 +10,17 @@
 .info-block__item:hover {
   font-style: italic;
 }
+
+@media screen and (max-width: 1200px) {
+  .info-block__item {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .info-block__item {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
