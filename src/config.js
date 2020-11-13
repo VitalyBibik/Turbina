@@ -3,6 +3,7 @@ import Little_Big from './components/audio-files/Little_Big_-_UNO_68748523.mp3';
 import blackMagican from './components/audio-files/blackMagican.mp3';
 import riderOfIce from './components/audio-files/riderOfIce.mp3';
 import posterBlackMagican from './components/audio-files/blackMagican.jpg';
+import posterRiderOfIce from './components/audio-files/riderOfIce.jpg';
 import poster from './components/audio-files/pic.jpg';
 
 const config = {
@@ -31,8 +32,9 @@ const config = {
   playlist: [
     {
       id: 1,
-      title: 'Sample',
-      poster: poster,
+      title: 'Super puper track long 2345',
+      clip: '/',
+      poster: '',
       performer: 'Sample1',
       author: 'Sample',
       audioFile,
@@ -48,10 +50,11 @@ const config = {
     {
       id: 2,
       title: 'CREAM',
+      clip: '/',
       poster: poster,
       performer: 'Little_Big1',
       author: 'Little_Big',
-      audioFile: wuTangCream,
+      audioFile: Little_Big,
       text: `Октябрь уж наступил — уж роща отряхает
       Последние листы с нагих своих ветвей;
       Дохнул осенний хлад — дорога промерзает.
@@ -64,6 +67,7 @@ const config = {
     {
       id: 3,
       title: 'Черный маг',
+      clip: '',
       poster: posterBlackMagican,
       performer: 'Эпидемия',
       author: '123g',
@@ -84,6 +88,7 @@ const config = {
     {
       id: 4,
       title: 'Всадник из льда',
+      youtube: '',
       poster: posterRiderOfIce,
       performer: 'Эпидемия',
       author: 'Apl',

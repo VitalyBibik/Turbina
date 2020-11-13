@@ -1,4 +1,4 @@
-export default function (callback, limit) {
+export default function throttling(callback, limit) {
   let waiting = false;
   return function () {
     if (!waiting) {

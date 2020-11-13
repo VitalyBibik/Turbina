@@ -1,5 +1,5 @@
+import styles from './player-timeline.module.css';
 import React from 'react';
-import styles from './styles.module.css';
 
 const PlayerTimeline = ({ duration, currentTime, onClick }) => {
   const clickHandler = (e) => {
@@ -10,9 +10,9 @@ const PlayerTimeline = ({ duration, currentTime, onClick }) => {
     onClick(timeToGo);
   };
   return (
-    <div className={styles['player-timeline']} onClick={clickHandler}>
+    <div className={styles['seekbar']} onClick={clickHandler}>
       <div
-        className={styles['player-timeline__bar']}
+        className={styles['seekbar__progress']}
         style={{
           width: `${(currentTime / duration) * 100}%`,
         }}

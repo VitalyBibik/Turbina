@@ -1,0 +1,29 @@
+.icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.icon_type_clip {
+  grid-area: button-сlip;
+  background-image: url('./icon-clip-l.svg');
+  margin-left: 20px;
+  width: 87px;
+  height: 34px;
+}
+.icon_is-invisible {
+  display: none;
+}
+
+@media screen and (max-width: 699px) {
+  .icon_type_clip {
+    background-image: url('./icon-clip-s.svg');
+    width: 74px;
+    height: 31px;
+    margin-left: 0;
+    margin-right: 5px;
+  }
+}

@@ -8,7 +8,7 @@ import { config } from '../../config';
 function App() {
   return (
     <div className={styles['app']}>
-      <HeaderMusic stream={config.stream} />
+      <HeaderMusic config={config} />
       <div className={styles['page']}>
         <Root />
       </div>

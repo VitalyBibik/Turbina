@@ -1,0 +1,12 @@
+.info-block__item {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.info-block__item:hover {
+  font-style: italic;
+}

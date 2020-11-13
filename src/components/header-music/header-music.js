@@ -4,12 +4,11 @@ import cn from 'classnames';
 import Turbina from '../turbina/index';
 import SoundPlayer from '../audio-player/index';
 import React, { useState } from 'react';
-import Player from '../player';
 
-function HeaderMusic({ stream }) {
+function HeaderMusic({ config }) {
   const [open, setOpen] = useState(false);
 
-  const linkRender = stream.map((element) => {
+  const linkRender = config.stream.map((element) => {
     return (
       <li className={styles['header-block']} key={element.id}>
         <a
@@ -39,7 +38,7 @@ function HeaderMusic({ stream }) {
               styles['header-music__button'],
               styles['header-block'],
               styles['header-block_mobile'],
-              open ? styles['menu__burger'] : null
+              open && styles['menu__burger']
             )}
             onClick={() => setOpen(!open)}
           >
@@ -48,7 +47,7 @@ function HeaderMusic({ stream }) {
           <ul
             className={cn(
               styles['header-block-ul'],
-              open ? styles['header-block-ul__open'] : null
+              open && styles['header-block-ul__open']
             )}
           >
             {linkRender}
@@ -56,8 +55,7 @@ function HeaderMusic({ stream }) {
         </div>
       </div>
       <Turbina />
-      <SoundPlayer />
-      <Player />
+      <SoundPlayer playlist={config.playlist} />
     </div>
   );
 }
