@@ -7,10 +7,11 @@ import throttling from '../../utils/throttling';
 import PlayerTimeline from '../player-timeline';
 import PlayerItems from '../player-items/player-items';
 import ButtonClip from '../button-clip';
+import DefaultImage from '../audio-files/pic.jpg';
 
-function SoundPlayer({ playlist }) {
+function SoundPlayer({ playlist, onClick }) {
   const [currentTrack, setCurrentTrack] = useState(playlist[0]);
-  const [allTracks, setAllTracks] = useState(playlist);
+  const [allTracks] = useState(playlist);
 
   const [infoReliz, setInfoReliz] = useState(false); // reliz block or text block
   const [infoText, setInfoText] = useState(false); // text
@@ -25,6 +26,15 @@ function SoundPlayer({ playlist }) {
 
   const isLoggedIn = currentTrack?.clip;
 
+  const canPlay = useRef(false);
+
+  const [blur, setBlur] = useState(false);
+
+  const blurHandler = (e) => {
+    setBlur(!blur);
+    onClick(blur);
+  };
+
   const onTimeUpdate = throttling((e) => {
     setCurrentTime(e.target.currentTime);
   }, 1000);
@@ -36,21 +46,22 @@ function SoundPlayer({ playlist }) {
     setDuration(e.target.duration);
   };
   const onEnded = (e) => {
-    console.log('Закончилось', e);
-    console.log(allTracks, 'alltracks');
     const indexTrack = allTracks.findIndex(
       (track) => track.id === currentTrack.id
     );
-    if (indexTrack === allTracks.lastIndex) {
-      alert('end');
-    } else {
-      return setCurrentTrack(allTracks[indexTrack + 1]);
+
+    if (indexTrack === allTracks.length - 1) {
+      setCurrentTrack(allTracks[0]);
+      canPlay.current = false;
+      return setIsPlaying(false);
     }
-    // console.log(indexTrack,'und');
+    setCurrentTrack(allTracks[indexTrack + 1]);
+    canPlay.current = true; // test
   };
-  const onCanPLay = (e) => {
-    console.log('CanPLay', e);
+  const onCanPlay = (e) => {
+    canPlay.current ? myPlayer.current.play() : myPlayer.current.pause();
   };
+
   const getTextBlock = (text) => {
     const regExp = /[/a-z']+/;
     return text.split('\n').map((str, i) => (
@@ -70,7 +81,7 @@ function SoundPlayer({ playlist }) {
         src={
           currentTrack.poster
             ? currentTrack.poster
-            : (currentTrack.poster = 'https://via.placeholder.com/200')
+            : (currentTrack.poster = DefaultImage)
         }
         alt={'Иллюстрация для обложки'}
       />
@@ -82,6 +93,7 @@ function SoundPlayer({ playlist }) {
             setIsPlaying(false);
           } else {
             myPlayer.current.play();
+            canPlay.current = true;
             setIsPlaying(true);
           }
         }}
@@ -154,7 +166,9 @@ function SoundPlayer({ playlist }) {
                     key={item.id}
                     onClick={(item) => {
                       setCurrentTrack(item);
-                      setIsPlaying(false);
+                      if (isPlaying) {
+                        setIsPlaying(true);
+                      }
                     }}
                   />
                 );
@@ -195,6 +209,7 @@ function SoundPlayer({ playlist }) {
           setInfoReliz(!infoReliz); // Убираем блок инфо релиз
           setInfoText(!infoText); // Убираем блок инфо текст
           setPosterImg(!posterImg); // НЕ ТРОГАТЬ
+          blurHandler();
           if (buttonManagement === false) {
             setButtonManagement(!buttonManagement);
           }
@@ -207,7 +222,7 @@ function SoundPlayer({ playlist }) {
         ref={myPlayer}
         onPlay={onPlay}
         onPause={onPause}
-        onCanPlay={onCanPLay}
+        onCanPlay={onCanPlay}
         onEnded={onEnded}
         onTimeUpdate={onTimeUpdate}
         loop={false} // Не играет повторно, true играет

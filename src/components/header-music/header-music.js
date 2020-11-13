@@ -8,6 +8,8 @@ import React, { useState } from 'react';
 function HeaderMusic({ config }) {
   const [open, setOpen] = useState(false);
 
+  const [blur, setBlur] = useState(false);
+
   const linkRender = config.stream.map((element) => {
     return (
       <li className={styles['header-block']} key={element.id}>
@@ -24,11 +26,11 @@ function HeaderMusic({ config }) {
   });
 
   return (
-    <div className={styles['container']}>
+    <div className={cn(styles['container'])}>
       <div
         className={cn(
           styles['header-music'],
-          styles['header-music_for_player'],
+          blur && styles['header-music_for_player'],
           styles['container__header-music']
         )}
       >
@@ -55,8 +57,13 @@ function HeaderMusic({ config }) {
           </ul>
         </div>
       </div>
-      <Turbina />
-      <SoundPlayer playlist={config.playlist} />
+      <Turbina hdBlur={blur} />
+      <SoundPlayer
+        playlist={config.playlist}
+        onClick={(status) => {
+          setBlur(!status);
+        }}
+      />
     </div>
   );
 }

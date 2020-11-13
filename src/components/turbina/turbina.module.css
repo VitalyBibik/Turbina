@@ -2,6 +2,11 @@
   width: 861px;
   margin: 0 auto;
 }
+
+.banner_for_player {
+  filter: blur(0);
+}
+
 .header-music__banner {
   padding-bottom: 179px;
   margin-top: 220px;
@@ -26,20 +31,22 @@
   }
 }
 
-@media screen and (min-width: 320px) AND (max-width: 500px) {
-  .banner {
-    width: 270px;
+@media screen and (max-width: 699px) {
+  .banner_for_player {
+    filter: blur(4px);
   }
+
+  .banner {
+    width: 500px;
+  }
+
   .header-music__banner {
     padding-bottom: 179px;
   }
 }
 
-@media screen and (min-width: 500px) AND (max-width: 620px) {
+@media screen and (max-width: 500px) {
   .banner {
-    width: 500px;
-  }
-  .header-music__banner {
-    padding-bottom: 179px;
+    width: 270px;
   }
 }
