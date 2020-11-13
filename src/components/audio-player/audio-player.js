@@ -44,7 +44,7 @@ function SoundPlayer({ playlist }) {
   const getTextBlock = (text) => {
     const regExp = /[/a-z']+/;
     return text.split('\n').map((str, i) => (
-      <p className={styles['info-block__text']} key={<code>p_${i}</code>}>
+      <p className={styles['info-block__text']} key={i}>
         {str.replace(regExp, '')}
       </p>
     ));
