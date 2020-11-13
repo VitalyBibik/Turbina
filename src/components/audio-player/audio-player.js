@@ -30,6 +30,14 @@ function SoundPlayer({ playlist }) {
 
   const onPlay = (e) => {
     setDuration(e.target.duration);
+    console.log(e.target.duration, 'изначальное время');
+    const ostatok = e.target.duration - e.target.currentTime;
+    console.log(e.target.duration - e.target.currentTime, 'time');
+    setTimeout(() => {}, ostatok);
+  };
+  const onPause = (e) => {
+    setDuration(e.target.duration);
+    console.log('start Pause', e);
   };
 
   return (
@@ -134,7 +142,7 @@ function SoundPlayer({ playlist }) {
           className={cn(
             // скрытие текста блока
             styles['info-block'],
-            infoButton ? null : styles['info-block_is-invisible']
+            !infoButton && styles['info-block_is-invisible']
           )}
         >
           <Scrollbar
@@ -173,7 +181,9 @@ function SoundPlayer({ playlist }) {
         src={currentTrack.audioFile}
         ref={myPlayer}
         onPlay={onPlay}
+        onPause={onPause}
         onTimeUpdate={onTimeUpdate}
+        loop={false} // Не играет повторно, true играет
         onLoadedData={(_) => {
           console.log('loaded');
           setDuration(myPlayer.current.duration);
