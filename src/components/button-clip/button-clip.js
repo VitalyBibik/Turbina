@@ -8,9 +8,7 @@ const ButtonClip = ({ clip }) => (
     rel="noreferrer"
     target="_blank"
     className={cn(styles['icon'], styles['icon_type_clip'])}
-  >
-    {clip}
-  </a>
+  />
 );
 
 export default ButtonClip;
