@@ -135,7 +135,7 @@ function SoundPlayer({ playlist }) {
           className={cn(
             // скрытие текста блока
             styles['info-block'],
-            infoButton ? null : styles['info-block_is-invisible']
+            !infoButton && styles['info-block_is-invisible']
           )}
         >
           <Scrollbar
@@ -175,6 +175,7 @@ function SoundPlayer({ playlist }) {
         ref={myPlayer}
         onPlay={onPlay}
         onTimeUpdate={onTimeUpdate}
+        loop={false} // Не играет повторно, true играет
         onLoadedData={(_) => {
           console.log('loaded');
           setDuration(myPlayer.current.duration);
