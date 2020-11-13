@@ -287,8 +287,15 @@
       '  ...       info-blocks    info-blocks        ...      ';
   }
 
+  .player-is-open {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
   .cover {
-    margin: 0 0 20px 0;
+    margin: 0 auto 20px;
     max-width: 100%;
     max-height: 100%;
     margin-top: 30px;

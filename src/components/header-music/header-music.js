@@ -28,7 +28,7 @@ function HeaderMusic({ config }) {
       <div
         className={cn(
           styles['header-music'],
-          styles['header-music_type_blur'],
+          styles['header-music_for_player'],
           styles['container__header-music']
         )}
       >

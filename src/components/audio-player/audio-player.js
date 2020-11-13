@@ -33,7 +33,7 @@ function SoundPlayer({ playlist }) {
   };
 
   return (
-    <div className={cn(styles['player'])}>
+    <div className={cn(styles['player'], styles['player-is-open'])}>
       <img
         className={cn(
           styles['cover'],

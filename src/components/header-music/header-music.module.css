@@ -4,7 +4,7 @@
   text-align: right;
 }
 
-.header-music_type_blur {
+.header-music_for_player {
   filter: blur(0);
 }
 
@@ -77,8 +77,9 @@
 }
 
 @media screen and (max-width: 699px) {
-  .header-music_type_blur {
+  .header-music_for_player {
     filter: blur(4px);
+    position: relative;
   }
 }
 
