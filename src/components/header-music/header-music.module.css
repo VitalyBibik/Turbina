@@ -15,6 +15,16 @@
   padding: 8px 20px 8px 20px;
   margin-bottom: 10px;
 }
+.header-link:hover {
+  color: #ffff00;
+  transition-delay: 0.5ms;
+  box-shadow: 0 0 0 2px yellow;
+}
+
+.header-block:hover {
+  transform: scale(1.1);
+  transition-delay: 0.5ms;
+}
 
 .header-block_mobile {
   display: none;
