@@ -16,9 +16,8 @@ const Form = () => (
       return CreateAndValidate(values);
     }}
     onSubmit={(values, { setSubmitting }) => {
-      // TODO сделать смену надписи
       setTimeout(() => {
-        console.log(values, 'Форма отправлена');
+        console.log(values, 'Форма готова');
         setSubmitting(false);
       }, 400);
     }}
