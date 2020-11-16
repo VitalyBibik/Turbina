@@ -1,5 +1,5 @@
 .banner {
-  width: 861px;
+  width: 75%;
   margin: 0 auto;
 }
 
@@ -7,10 +7,10 @@
   filter: blur(0);
 }
 
-.header-music__banner {
+/* .header-music__banner {
   padding-bottom: 179px;
   margin-top: 220px;
-}
+} */
 .img {
   object-fit: cover;
   width: 100%;
@@ -22,12 +22,9 @@
   text-align: center;
 }
 
-@media screen and (max-width: 867px) {
+@media screen and (max-width: 1000px) {
   .banner {
-    width: 620px;
-  }
-  .header-music__banner {
-    padding-bottom: 230px;
+    width: 85%;
   }
 }
 
@@ -37,16 +34,22 @@
   }
 
   .banner {
-    width: 500px;
+    min-width: 90%;
   }
 
-  .header-music__banner {
+  /* .header-music__banner {
     padding-bottom: 179px;
-  }
+  } */
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 699px) {
   .banner {
     width: 270px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 }

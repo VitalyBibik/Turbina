@@ -63,15 +63,20 @@
   content: ' ↗';
 }
 .container {
-  background-image: url('./header-photo.png');
+  /* background-image: url('./header-photo.png');
   background-repeat: no-repeat;
   background-size: cover;
+  */
   position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .container__header-music {
   display: flex;
   flex-direction: row;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   padding-top: 20px;
 }
 .menu {

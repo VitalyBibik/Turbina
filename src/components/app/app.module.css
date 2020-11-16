@@ -4,7 +4,9 @@
   font-weight: normal;
   margin: 0 auto;
   max-width: 1440px;
-  background: black;
+  background-image: url('./header-photo.png');
+  background-size: cover;
+  background-attachment: fixed;
 }
 .page {
   margin-left: 10px;
