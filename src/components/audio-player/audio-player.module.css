@@ -12,10 +12,10 @@
 .cover {
   grid-area: cover;
   margin-right: 20px;
-  max-width: 164px;
-  max-height: 164px;
+  width: 164px;
+  height: 164px;
   border-radius: 4px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -180,8 +180,8 @@
   }
 
   .cover {
-    max-width: 112px;
-    max-height: 112px;
+    width: 112px;
+    height: 112px;
     margin-top: 30px;
   }
 
@@ -234,6 +234,9 @@
       '  ...         cover         cover             ...      '
       '  ...       button-сlip   info-buttons        ...      '
       '  ...       info-blocks    info-blocks        ...      ';
+
+    margin-left: 14px;
+    margin-right: 14px;
   }
 
   .player-is-open {
@@ -242,8 +245,8 @@
 
   .cover {
     margin: 0 auto 20px;
-    max-width: 100%;
-    max-height: 100%;
+    width: 240px;
+    height: 240px;
     margin-top: 30px;
   }
 
@@ -266,6 +269,14 @@
   .info-block__item {
     font-size: 14px;
     line-height: 19px;
+  }
+
+  .icon_block_controls {
+    margin-right: 10px;
+  }
+
+  .icon_block_management {
+    margin-left: 10px;
   }
 
   .timer {
