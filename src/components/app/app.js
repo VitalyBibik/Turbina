@@ -4,6 +4,7 @@ import Root from '../root/root';
 import React from 'react';
 import Footer from '../footer';
 import { config } from '../../config';
+/* test comment */
 
 function App() {
   return (
