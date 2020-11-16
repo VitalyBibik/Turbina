@@ -7,10 +7,10 @@
   filter: blur(0);
 }
 
-.header-music__banner {
+/* .header-music__banner {
   padding-bottom: 179px;
   margin-top: 220px;
-}
+} */
 .img {
   object-fit: cover;
   width: 100%;
@@ -26,9 +26,9 @@
   .banner {
     width: 620px;
   }
-  .header-music__banner {
+  /* .header-music__banner {
     padding-bottom: 230px;
-  }
+  } */
 }
 
 @media screen and (max-width: 699px) {
@@ -40,13 +40,19 @@
     width: 500px;
   }
 
-  .header-music__banner {
+  /* .header-music__banner {
     padding-bottom: 179px;
-  }
+  } */
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 699px) {
   .banner {
     width: 270px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
 }
