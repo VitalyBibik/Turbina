@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Turbina/static/css/main.f6f2e734.chunk.css",
-    "main.js": "/Turbina/static/js/main.2c697664.chunk.js",
-    "main.js.map": "/Turbina/static/js/main.2c697664.chunk.js.map",
+    "main.css": "/Turbina/static/css/main.3f37c3ad.chunk.css",
+    "main.js": "/Turbina/static/js/main.b9fb53f8.chunk.js",
+    "main.js.map": "/Turbina/static/js/main.b9fb53f8.chunk.js.map",
     "runtime-main.js": "/Turbina/static/js/runtime-main.3885207c.js",
     "runtime-main.js.map": "/Turbina/static/js/runtime-main.3885207c.js.map",
     "static/js/2.3c5468c7.chunk.js": "/Turbina/static/js/2.3c5468c7.chunk.js",
     "static/js/2.3c5468c7.chunk.js.map": "/Turbina/static/js/2.3c5468c7.chunk.js.map",
     "index.html": "/Turbina/index.html",
-    "static/css/main.f6f2e734.chunk.css.map": "/Turbina/static/css/main.f6f2e734.chunk.css.map",
+    "static/css/main.3f37c3ad.chunk.css.map": "/Turbina/static/css/main.3f37c3ad.chunk.css.map",
     "static/js/2.3c5468c7.chunk.js.LICENSE.txt": "/Turbina/static/js/2.3c5468c7.chunk.js.LICENSE.txt",
     "static/media/Instrumental_Soon_-_Astronomia_2K19_71386145.bbb69fb9.mp3": "/Turbina/static/media/Instrumental_Soon_-_Astronomia_2K19_71386145.bbb69fb9.mp3",
     "static/media/Little_Big_-_UNO_68748523.406e111f.mp3": "/Turbina/static/media/Little_Big_-_UNO_68748523.406e111f.mp3",
@@ -16,9 +16,9 @@
     "static/media/Turbina.ac1ad1fa.png": "/Turbina/static/media/Turbina.ac1ad1fa.png",
     "static/media/blackMagican.003b87c0.mp3": "/Turbina/static/media/blackMagican.003b87c0.mp3",
     "static/media/blackMagican.fb71ddb4.jpg": "/Turbina/static/media/blackMagican.fb71ddb4.jpg",
-    "static/media/header-music.module.css": "/Turbina/static/media/header-photo.163ceeb9.png",
-    "static/media/button-clip.module.css": "/Turbina/static/media/icon-clip-s.3ba33ced.svg",
-    "static/media/audio-player.module.css": "/Turbina/static/media/icon-play.7cd1a80c.svg",
+    "static/media/app.module.css": "/Turbina/static/media/header-photo.163ceeb9.png",
+    "static/media/button-clip.module.css": "/Turbina/static/media/icon-clip-s.5571c537.svg",
+    "static/media/audio-player.module.css": "/Turbina/static/media/icon-play.99fff51f.svg",
     "static/media/pic.54dbed36.jpg": "/Turbina/static/media/pic.54dbed36.jpg",
     "static/media/riderOfIce.0a30886c.mp3": "/Turbina/static/media/riderOfIce.0a30886c.mp3",
     "static/media/riderOfIce.a2679e00.jpg": "/Turbina/static/media/riderOfIce.a2679e00.jpg"
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.3885207c.js",
     "static/js/2.3c5468c7.chunk.js",
-    "static/css/main.f6f2e734.chunk.css",
-    "static/js/main.2c697664.chunk.js"
+    "static/css/main.3f37c3ad.chunk.css",
+    "static/js/main.b9fb53f8.chunk.js"
   ]
 }
