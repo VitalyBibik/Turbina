@@ -1,5 +1,5 @@
 .banner {
-  width: 861px;
+  width: 75%;
   margin: 0 auto;
 }
 
@@ -22,13 +22,10 @@
   text-align: center;
 }
 
-@media screen and (max-width: 867px) {
+@media screen and (max-width: 1000px) {
   .banner {
-    width: 620px;
+    width: 85%;
   }
-  /* .header-music__banner {
-    padding-bottom: 230px;
-  } */
 }
 
 @media screen and (max-width: 699px) {
@@ -37,7 +34,7 @@
   }
 
   .banner {
-    width: 500px;
+    min-width: 90%;
   }
 
   /* .header-music__banner {
