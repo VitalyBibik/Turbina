@@ -58,7 +58,7 @@ function SoundPlayer({ playlist, onClick }) {
       return setIsPlaying(false);
     }
     setCurrentTrack(allTracks[indexTrack + 1]);
-    canPlay.current = true; // test вроде не надо
+    canPlay.current = true;
   };
   const onCanPlay = (e) => {
     canPlay.current ? myPlayer.current.play() : myPlayer.current.pause();
