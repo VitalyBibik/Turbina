@@ -30,7 +30,9 @@ function HeaderMusic({ config }) {
       <div
         className={cn(
           styles['header-music'],
-          blur && styles['header-music_for_player'],
+          {
+            [styles['header-music_for_player']]: blur,
+          },
           styles['container__header-music']
         )}
       >
@@ -41,17 +43,18 @@ function HeaderMusic({ config }) {
               styles['header-music__button'],
               styles['header-block'],
               styles['header-block_mobile'],
-              open && styles['menu__burger']
+              {
+                [styles['menu__burger']]: open,
+              }
             )}
             onClick={() => setOpen(!open)}
           >
             {open ? '' : 'Стриминги'}
           </button>
           <ul
-            className={cn(
-              styles['header-block-ul'],
-              open && styles['header-block-ul__open']
-            )}
+            className={cn(styles['header-block-ul'], {
+              [styles['header-block-ul__open']]: open,
+            })}
           >
             {linkRender}
           </ul>
