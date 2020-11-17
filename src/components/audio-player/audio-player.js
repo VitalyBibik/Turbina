@@ -8,6 +8,7 @@ import PlayerTimeline from '../player-timeline';
 import PlayerItems from '../player-items/player-items';
 import ButtonClip from '../button-clip';
 import DefaultImage from '../audio-files/pic.jpg';
+import { CSSTransition } from 'react-transition-group';
 import { IconClose, IconOpen, IconPause, IconPlay } from '../svg-icons';
 
 function SoundPlayer({ playlist, onClick }) {
@@ -126,23 +127,30 @@ function SoundPlayer({ playlist, onClick }) {
       {buttonManagement && isLoggedIn && (
         <ButtonClip clip={currentTrack.clip} />
       )}
-      <button
-        className={cn(
-          styles['button'],
-          styles['button_block_info'],
-          styles['button_type_text'],
-          styles['button_color_transparent'],
-          !buttonManagement && styles['button_is-invisible']
-        )}
-        onClick={() => {
-          setInfoButton(!infoButton);
-          setInfoReliz(!infoReliz); // Убираем блок инфо релиз
-          setInfoText(!infoText); // Убираем блок инфо текст
-        }}
+      <CSSTransition
+        in={buttonManagement}
+        timeout={300}
+        classNames={styles['alert']}
       >
-        {infoButton ? 'Релизы' : 'Текст песни'}
-      </button>
-
+        <button
+          className={cn(
+            styles['button'],
+            styles['button_block_info'],
+            styles['button_type_text'],
+            styles['button_color_transparent'],
+            {
+              [styles['button_is-invisible']]: !buttonManagement,
+            }
+          )}
+          onClick={() => {
+            setInfoButton(!infoButton);
+            setInfoReliz(!infoReliz); // Убираем блок инфо релиз
+            setInfoText(!infoText); // Убираем блок инфо текст
+          }}
+        >
+          {infoButton ? 'Релизы' : 'Текст песни'}
+        </button>
+      </CSSTransition>
       <div className={cn(styles['info-blocks'])}>
         <div
           className={cn(
