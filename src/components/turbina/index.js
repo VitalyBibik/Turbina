@@ -13,7 +13,9 @@ const Turbina = ({
 }) => {
   return (
     <div
-      className={cn(styles['banner'], hdBlur && styles['banner_for_player'])}
+      className={cn(styles['banner'], {
+        [styles['banner_for_player']]: hdBlur,
+      })}
     >
       <picture
         className={cn(styles['picture-banner'], styles['header-music__banner'])}
