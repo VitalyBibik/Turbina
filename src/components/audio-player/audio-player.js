@@ -82,7 +82,7 @@ function SoundPlayer({ playlist, onClick }) {
             ? currentTrack.poster
             : (currentTrack.poster = DefaultImage)
         }
-        alt={'Иллюстрация для обложки'}
+        alt="Иллюстрация для обложки"
       />
 
       <span
