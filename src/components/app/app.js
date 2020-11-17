@@ -4,13 +4,12 @@ import Root from '../root/root';
 import React from 'react';
 import Footer from '../footer';
 import { config } from '../../config';
-
-/* test comment */
+import { tracks } from '../../tracks';
 
 function App() {
   return (
     <div className={styles['app']}>
-      <HeaderMusic config={config} />
+      <HeaderMusic config={config} tracks={tracks} />
       <div className={styles['page']}>
         <Root />
       </div>

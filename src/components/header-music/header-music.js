@@ -5,7 +5,7 @@ import Turbina from '../turbina/index';
 import SoundPlayer from '../audio-player/index';
 import React, { useState } from 'react';
 
-function HeaderMusic({ config }) {
+function HeaderMusic({ config, tracks }) {
   const [open, setOpen] = useState(false);
 
   const [blur, setBlur] = useState(false);
@@ -62,7 +62,7 @@ function HeaderMusic({ config }) {
       </div>
       <Turbina hdBlur={blur} />
       <SoundPlayer
-        playlist={config.playlist}
+        playlist={tracks.playlist}
         onClick={(status) => {
           setBlur(!status);
         }}
