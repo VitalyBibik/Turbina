@@ -43,7 +43,7 @@ const Form = () => (
           value={values.fullName}
           required
         />
-        <span className={styles['test']}>
+        <span className={styles['form__error']}>
           {' '}
           {errors.fullName && touched.fullName && errors.fullName}{' '}
         </span>
@@ -59,7 +59,7 @@ const Form = () => (
           value={values.mobilePhone}
           required
         />
-        <span className={styles['test']}>
+        <span className={styles['form__error']}>
           {' '}
           {errors.mobilePhone && touched.mobilePhone && errors.mobilePhone}{' '}
         </span>
@@ -73,7 +73,7 @@ const Form = () => (
           value={values.email}
           required
         />
-        <span className={styles['test']}>
+        <span className={styles['form__error']}>
           {' '}
           {errors.email && touched.email && errors.email}{' '}
         </span>
@@ -87,9 +87,11 @@ const Form = () => (
           value={values.userText}
           required
         />
-        <span className={styles['test']}>
+        <span className={styles['form__error']}>
           {' '}
-          {errors.userText && touched.userText && errors.userText}{' '}
+          {errors.userText && touched.userText && errors.userText && (
+            <span className={styles['form__error']}>{errors.userText}</span>
+          )}
         </span>
         <label className={styles['form__check']}>
           <Field
@@ -98,7 +100,7 @@ const Form = () => (
             className={styles['form__ellipse']}
             required
           />
-          <span className={styles['form__span']}></span>
+          <span className={styles['form__span']} />
           {
             <p className={styles['form__text']}>
               Согласен с &#160;

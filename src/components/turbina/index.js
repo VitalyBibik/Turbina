@@ -34,10 +34,4 @@ const Turbina = ({
   );
 };
 
-/*
-
-
-    Это должно быть внутри тут
-*/
-
 export default Turbina;
