@@ -184,27 +184,15 @@
     margin-top: 30px;
   }
 
-  .treck-info {
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  .info-block__title {
-    font-size: 18px;
-    line-height: 22px;
-  }
-
   .info-block__text {
     font-size: 18px;
     line-height: 26px;
   }
 
+  .timer,
+  .info-block__title,
+  .treck-info,
   .info-block__item {
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  .timer {
     font-size: 18px;
     line-height: 22px;
   }
@@ -214,11 +202,7 @@
     line-height: 18px;
   }
 
-  .icon_type_play {
-    width: 15px;
-    height: 15px;
-  }
-
+  .icon_type_play,
   .icon_type_pause {
     width: 15px;
     height: 15px;
