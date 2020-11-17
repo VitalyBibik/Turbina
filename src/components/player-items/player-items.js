@@ -9,7 +9,7 @@ const PlayerListItem = ({ item, onClick }) => {
   } = item;
   return (
     <li className={styles['info-block__item']} onClick={(_) => onClick(item)}>
-      {`${title} -  ${performer}`} <i>feat.</i> {`${author}`}
+      {`${title} -  ${performer}`} <i>feat.</i> {author}
     </li>
   );
 };
