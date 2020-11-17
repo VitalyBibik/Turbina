@@ -74,10 +74,9 @@ function SoundPlayer({ playlist, onClick }) {
   return (
     <div className={cn(styles['player'], styles['player-is-open'])}>
       <img
-        className={cn(
-          styles['cover'],
-          !posterImg && styles['cover_is-invisible']
-        )}
+        className={cn(styles['cover'], {
+          [styles['cover_is-invisible']]: !posterImg,
+        })}
         src={
           currentTrack.poster
             ? currentTrack.poster
@@ -145,7 +144,9 @@ function SoundPlayer({ playlist, onClick }) {
           className={cn(
             // скрытие релиза блока
             styles['info-block'],
-            !infoReliz && styles['info-block_is-invisible']
+            {
+              [styles['info-block_is-invisible']]: !infoReliz,
+            }
           )}
         >
           <Scrollbar
@@ -183,7 +184,9 @@ function SoundPlayer({ playlist, onClick }) {
           className={cn(
             // скрытие текста блока
             styles['info-block'],
-            !infoButton && styles['info-block_is-invisible']
+            {
+              [styles['info-block_is-invisible']]: !infoButton,
+            }
           )}
         >
           <Scrollbar
@@ -229,7 +232,6 @@ function SoundPlayer({ playlist, onClick }) {
         onTimeUpdate={onTimeUpdate}
         loop={false} // Не играет повторно, true играет
         onLoadedData={(_) => {
-          console.log('loaded');
           setDuration(myPlayer.current.duration);
         }}
       >
