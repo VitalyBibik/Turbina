@@ -1,8 +1,10 @@
 import styles from './header-music.module.css';
-import Banner from '../banner/index';
 import cn from 'classnames';
-import Turbina from '../turbina/index';
-import SoundPlayer from '../audio-player/index';
+import Turbina from '../turbina/Turbina';
+import SoundPlayer from '../audio-player/audio-player';
+import IconBannerHeader from '../svg-icons/IconBannerHeader';
+import IconHeaderExit from '../svg-icons/IconHeaderExit';
+
 import React, { useState } from 'react';
 
 function HeaderMusic({ config, tracks }) {
@@ -36,22 +38,21 @@ function HeaderMusic({ config, tracks }) {
           styles['container__header-music']
         )}
       >
-        <Banner />
-        <div className={styles['menu']}>
-          <button
-            className={cn(
-              styles['header-music__button'],
-              styles['header-block'],
-              styles['header-block_mobile'],
-              {
-                //
-                [styles['menu__burger']]: open,
-              }
-            )}
-            onClick={() => setOpen(!open)}
-          >
-            {open ? '' : 'Стриминги'}
-          </button>
+        <IconBannerHeader className={styles['banner']} />
+        <div className={styles['menu']} onClick={() => setOpen(!open)}>
+          {open ? (
+            <IconHeaderExit className={styles['menu__burger']} />
+          ) : (
+            <button
+              className={cn(
+                styles['header-music__button'],
+                styles['header-block'],
+                styles['header-block_mobile']
+              )}
+            >
+              {'Стриминги'}
+            </button>
+          )}
           <ul
             className={cn(styles['header-block-ul'], {
               [styles['header-block-ul__open']]: open,
