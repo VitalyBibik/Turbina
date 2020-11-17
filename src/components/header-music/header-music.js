@@ -44,6 +44,7 @@ function HeaderMusic({ config, tracks }) {
               styles['header-block'],
               styles['header-block_mobile'],
               {
+                //
                 [styles['menu__burger']]: open,
               }
             )}

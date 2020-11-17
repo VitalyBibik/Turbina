@@ -8,6 +8,7 @@ import PlayerTimeline from '../player-timeline';
 import PlayerItems from '../player-items/player-items';
 import ButtonClip from '../button-clip';
 import DefaultImage from '../audio-files/pic.jpg';
+import { IconClose, IconOpen, IconPause, IconPlay } from '../svg-icons';
 
 function SoundPlayer({ playlist, onClick }) {
   const [currentTrack, setCurrentTrack] = useState(playlist[0]);
@@ -97,12 +98,14 @@ function SoundPlayer({ playlist, onClick }) {
             setIsPlaying(true);
           }
         }}
-        className={cn(
-          styles['icon'],
-          styles['icon_block_controls'],
-          isPlaying ? styles['icon_type_pause'] : styles['icon_type_play']
+        className={cn(styles['icon'], styles['icon_block_controls'])}
+      >
+        {isPlaying ? (
+          <IconPause className={styles['icon_type_pause']} />
+        ) : (
+          <IconPlay className={styles['icon_type_play']} />
         )}
-      />
+      </span>
 
       <div className={styles['info-play']}>
         <div className={styles['description']}>
@@ -203,13 +206,7 @@ function SoundPlayer({ playlist, onClick }) {
       </div>
 
       <span //Кнопка с крестиком
-        className={cn(
-          styles['icon'],
-          styles['icon_block_management'],
-          buttonManagement
-            ? styles['icon_type_close']
-            : styles['icon_type_open']
-        )}
+        className={cn(styles['icon'], styles['icon_block_management'])}
         onClick={() => {
           setButtonManagement(!buttonManagement); // Меняем слушатель кнопки Релиз/Текст
           setInfoReliz(!infoReliz); // Убираем блок инфо релиз
@@ -220,7 +217,13 @@ function SoundPlayer({ playlist, onClick }) {
             setButtonManagement(!buttonManagement);
           }
         }}
-      />
+      >
+        {buttonManagement ? (
+          <IconClose className={styles['icon_type_close']} />
+        ) : (
+          <IconOpen className={styles['icon_type_open']} />
+        )}
+      </span>
 
       <audio
         className={styles['audio']}

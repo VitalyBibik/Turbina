@@ -99,17 +99,14 @@
 }
 
 .icon_type_play {
-  background-image: url('./icon-play.svg');
   padding-top: 5px;
 }
 
 .icon_type_pause {
-  background-image: url('./icon-pause.svg');
   padding-top: 5px;
 }
 
 .icon_type_open {
-  background-image: url('./icon-open.svg');
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -117,7 +114,6 @@
 }
 
 .icon_type_close {
-  background-image: url('./icon-close.svg');
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -204,8 +200,7 @@
 
   .icon_type_play,
   .icon_type_pause {
-    width: 15px;
-    height: 15px;
+    height: 18px;
   }
 }
 
@@ -227,29 +222,20 @@
   }
 
   .cover {
-    margin: 0 auto 20px;
     width: 240px;
     height: 240px;
-    margin-top: 30px;
-  }
-
-  .treck-info {
-    font-size: 14px;
-    line-height: 19px;
-  }
-
-  .info-block__title {
-    font-size: 14px;
-    line-height: 19px;
+    margin: 30px auto 20px;
   }
 
   .info-block__text {
-    font-size: 14px;
-    line-height: 19px;
     padding-right: 20px;
   }
 
-  .info-block__item {
+  .info-block__item,
+  .timer,
+  .info-block__title,
+  .treck-info,
+  .info-block__text {
     font-size: 14px;
     line-height: 19px;
   }
@@ -260,11 +246,6 @@
 
   .icon_block_management {
     margin-left: 10px;
-  }
-
-  .timer {
-    font-size: 14px;
-    line-height: 19px;
   }
 
   .blocks {
@@ -286,13 +267,7 @@
   }
 
   .icon_type_play {
-    width: 14px;
-    height: 14px;
-  }
-
-  .icon_type_pause {
-    width: 14px;
-    height: 14px;
+    height: 18px;
   }
 
   .info-play {
@@ -300,10 +275,10 @@
   }
 
   .icon_type_open {
-    height: 16px;
+    height: 24px;
   }
-
-  .icon_type_close {
+  .header_type_close,
+  .icon_type_pause {
     height: 16px;
   }
 }
