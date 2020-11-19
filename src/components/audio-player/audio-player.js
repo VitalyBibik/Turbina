@@ -130,7 +130,7 @@ function SoundPlayer({ playlist, onClick }) {
       <CSSTransition
         in={buttonManagement}
         timeout={300}
-        classNames={styles['alert']}
+        classNames={styles['alert1']}
       >
         <button
           className={cn(
