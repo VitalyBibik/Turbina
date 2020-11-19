@@ -32,6 +32,8 @@ function SoundPlayer({ playlist, onClick }) {
 
   const [blur, setBlur] = useState(false);
 
+  const buttonRef = useRef(null);
+
   const blurHandler = (e) => {
     setBlur(!blur);
     onClick(blur);
@@ -127,30 +129,25 @@ function SoundPlayer({ playlist, onClick }) {
       {buttonManagement && isLoggedIn && (
         <ButtonClip clip={currentTrack.clip} />
       )}
-      <CSSTransition
-        in={buttonManagement}
-        timeout={300}
-        classNames={styles['alert1']}
+      <button
+        className={cn(
+          styles['button'],
+          styles['button_block_info'],
+          styles['button_type_text'],
+          styles['button_color_transparent'],
+          {
+            [styles['button_is-invisible']]: !buttonManagement,
+          }
+        )}
+        onClick={() => {
+          buttonRef.current.focus();
+          setInfoButton(!infoButton);
+          setInfoReliz(!infoReliz); // Убираем блок инфо релиз
+          setInfoText(!infoText); // Убираем блок инфо текст
+        }}
       >
-        <button
-          className={cn(
-            styles['button'],
-            styles['button_block_info'],
-            styles['button_type_text'],
-            styles['button_color_transparent'],
-            {
-              [styles['button_is-invisible']]: !buttonManagement,
-            }
-          )}
-          onClick={() => {
-            setInfoButton(!infoButton);
-            setInfoReliz(!infoReliz); // Убираем блок инфо релиз
-            setInfoText(!infoText); // Убираем блок инфо текст
-          }}
-        >
-          {infoButton ? 'Релизы' : 'Текст песни'}
-        </button>
-      </CSSTransition>
+        {infoButton ? 'Релизы' : 'Текст песни'}
+      </button>
       <div className={cn(styles['info-blocks'])}>
         <div
           className={cn(
