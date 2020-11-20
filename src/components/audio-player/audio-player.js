@@ -8,7 +8,7 @@ import PlayerTimeline from '../player-timeline';
 import PlayerItems from '../player-items/player-items';
 import ButtonClip from '../button-clip';
 import DefaultImage from '../audio-files/pic.jpg';
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransitionGroup } from 'react-transition-group';
 import { IconClose, IconOpen, IconPause, IconPlay } from '../svg-icons';
 
 function SoundPlayer({ playlist, onClick }) {
