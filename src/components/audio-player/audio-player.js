@@ -8,7 +8,6 @@ import PlayerTimeline from '../player-timeline';
 import PlayerItems from '../player-items/player-items';
 import ButtonClip from '../button-clip';
 import DefaultImage from '../audio-files/pic.jpg';
-import { CSSTransitionGroup } from 'react-transition-group';
 import { IconClose, IconOpen, IconPause, IconPlay } from '../svg-icons';
 
 function SoundPlayer({ playlist, onClick }) {
@@ -38,6 +37,10 @@ function SoundPlayer({ playlist, onClick }) {
     setBlur(!blur);
     onClick(blur);
   };
+
+  const Bounce = styled.div`
+    animation: 2s ${keyframes`${bounce}`} infinite;
+  `;
 
   const onTimeUpdate = throttling((e) => {
     setCurrentTime(e.target.currentTime);
