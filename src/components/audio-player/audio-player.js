@@ -31,16 +31,10 @@ function SoundPlayer({ playlist, onClick }) {
 
   const [blur, setBlur] = useState(false);
 
-  const buttonRef = useRef(null);
-
   const blurHandler = (e) => {
     setBlur(!blur);
     onClick(blur);
   };
-
-  const Bounce = styled.div`
-    animation: 2s ${keyframes`${bounce}`} infinite;
-  `;
 
   const onTimeUpdate = throttling((e) => {
     setCurrentTime(e.target.currentTime);
@@ -143,7 +137,6 @@ function SoundPlayer({ playlist, onClick }) {
           }
         )}
         onClick={() => {
-          buttonRef.current.focus();
           setInfoButton(!infoButton);
           setInfoReliz(!infoReliz); // Убираем блок инфо релиз
           setInfoText(!infoText); // Убираем блок инфо текст
