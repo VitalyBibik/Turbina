@@ -14,11 +14,12 @@ function SoundPlayer({ playlist, onClick }) {
   const [currentTrack, setCurrentTrack] = useState(playlist[0]);
   const [allTracks] = useState(playlist);
 
-  const [infoReliz, setInfoReliz] = useState(false); // reliz block or text block
-  const [infoText, setInfoText] = useState(false); // text
+  const [test, setTest] = useState(false); // info-blocks с 2 блоками информации
   const [posterImg, setPosterImg] = useState(false); // openPoster/hidePoster
   const [buttonManagement, setButtonManagement] = useState(false); // openBlock/hideBlock
   const [infoButton, setInfoButton] = useState(false);
+
+  const [blocks, setBlock] = useState(false);
 
   const [isPlaying, setIsPlaying] = useState(false); // play or pause
   const myPlayer = useRef(null);
@@ -74,7 +75,7 @@ function SoundPlayer({ playlist, onClick }) {
   };
 
   return (
-    <div className={cn(styles['player'], styles['player-is-open'])}>
+    <div className={cn(styles['player'], styles['player-is_open'])}>
       <img
         className={cn(styles['cover'], {
           [styles['cover_is-invisible']]: !posterImg,
@@ -138,19 +139,22 @@ function SoundPlayer({ playlist, onClick }) {
         )}
         onClick={() => {
           setInfoButton(!infoButton);
-          setInfoReliz(!infoReliz); // Убираем блок инфо релиз
-          setInfoText(!infoText); // Убираем блок инфо текст
+          setTest(!test);
         }}
       >
         {infoButton ? 'Релизы' : 'Текст песни'}
       </button>
-      <div className={cn(styles['info-blocks'])}>
+      <div
+        className={cn(styles['info-blocks'], {
+          [styles['info-blocks_is-invisible']]: !blocks,
+        })}
+      >
         <div
           className={cn(
             // скрытие релиза блока
             styles['info-block'],
             {
-              [styles['info-block_is-invisible']]: !infoReliz,
+              [styles['info-block_is-invisible']]: !test,
             }
           )}
         >
@@ -190,7 +194,7 @@ function SoundPlayer({ playlist, onClick }) {
             // скрытие текста блока
             styles['info-block'],
             {
-              [styles['info-block_is-invisible']]: !infoButton,
+              [styles['info-block_is-invisible']]: test,
             }
           )}
         >
@@ -210,8 +214,7 @@ function SoundPlayer({ playlist, onClick }) {
         className={cn(styles['icon'], styles['icon_block_management'])}
         onClick={() => {
           setButtonManagement(!buttonManagement); // Меняем слушатель кнопки Релиз/Текст
-          setInfoReliz(!infoReliz); // Убираем блок инфо релиз
-          setInfoText(!infoText); // Убираем блок инфо текст
+          setBlock(!blocks);
           setPosterImg(!posterImg); // НЕ ТРОГАТЬ
           blurHandler();
           if (buttonManagement === false) {
