@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Turbina/static/css/main.0dd1c18a.chunk.css",
-    "main.js": "/Turbina/static/js/main.a12ca9c4.chunk.js",
-    "main.js.map": "/Turbina/static/js/main.a12ca9c4.chunk.js.map",
+    "main.css": "/Turbina/static/css/main.17f3770e.chunk.css",
+    "main.js": "/Turbina/static/js/main.b7729d79.chunk.js",
+    "main.js.map": "/Turbina/static/js/main.b7729d79.chunk.js.map",
     "runtime-main.js": "/Turbina/static/js/runtime-main.3885207c.js",
     "runtime-main.js.map": "/Turbina/static/js/runtime-main.3885207c.js.map",
     "static/js/2.797e7655.chunk.js": "/Turbina/static/js/2.797e7655.chunk.js",
     "static/js/2.797e7655.chunk.js.map": "/Turbina/static/js/2.797e7655.chunk.js.map",
     "index.html": "/Turbina/index.html",
-    "static/css/main.0dd1c18a.chunk.css.map": "/Turbina/static/css/main.0dd1c18a.chunk.css.map",
+    "static/css/main.17f3770e.chunk.css.map": "/Turbina/static/css/main.17f3770e.chunk.css.map",
     "static/js/2.797e7655.chunk.js.LICENSE.txt": "/Turbina/static/js/2.797e7655.chunk.js.LICENSE.txt",
     "static/media/Instrumental_Soon_-_Astronomia_2K19_71386145.bbb69fb9.mp3": "/Turbina/static/media/Instrumental_Soon_-_Astronomia_2K19_71386145.bbb69fb9.mp3",
     "static/media/app.module.css": "/Turbina/static/media/header-photo.163ceeb9.png",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.3885207c.js",
     "static/js/2.797e7655.chunk.js",
-    "static/css/main.0dd1c18a.chunk.css",
-    "static/js/main.a12ca9c4.chunk.js"
+    "static/css/main.17f3770e.chunk.css",
+    "static/js/main.b7729d79.chunk.js"
   ]
 }
