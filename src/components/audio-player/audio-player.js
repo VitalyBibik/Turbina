@@ -11,6 +11,7 @@ import ButtonClip from '../button-clip';
 import { CSSTransition } from 'react-transition-group';
 import DefaultImage from '../audio-files/pic.jpg';
 import { IconClose, IconOpen, IconPause, IconPlay } from '../svg-icons';
+import PlayerAnimations from '../player-animations';
 
 function SoundPlayer({ playlist, onClick }) {
   const [currentTrack, setCurrentTrack] = useState(playlist[0]);
@@ -78,6 +79,7 @@ function SoundPlayer({ playlist, onClick }) {
 
   return (
     <div className={cn(styles['player'], styles['player-is_open'])}>
+      <PlayerAnimations component={} />
       <img
         className={cn(styles['cover'], {
           [styles['cover_is-invisible']]: !posterImg,
@@ -149,7 +151,12 @@ function SoundPlayer({ playlist, onClick }) {
       <CSSTransition
         in={buttonManagement}
         timeout={500}
-        classNames={stylesAnimation['info-blocks-animation']}
+        classNames={{
+          enterActive: stylesAnimation['info-blocks-animation-enter'],
+          enterDone: stylesAnimation['info-blocks-animation-enter-active'],
+          exitActive: stylesAnimation['info-blocks-animation-exit'],
+          // exitDone: stylesAnimation['info-blocks-animation-exit-done']
+        }}
       >
         <div
           className={cn(styles['info-blocks'], {

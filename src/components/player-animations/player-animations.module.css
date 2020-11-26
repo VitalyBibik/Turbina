@@ -1,25 +1,11 @@
-/*.enter {
-    opacity: 0;
-    transform: scaleY(0);
-    height: 0;
-}
-
-.enterActive {
-    opacity: 1;
-    height: 120px;
-    transform: scaleY(1);
-    transition: all 500ms ease-in;
-}
-*/
-
-.info-blocks-animation-enter {
+.animation-enter {
   opacity: 0;
   transform: scale(0.9);
   background: red;
   z-index: 99;
 }
 
-.info-blocks-animation-enter-active {
+.animation-enter-active {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 300ms, transform 300ms;
@@ -27,16 +13,16 @@
   z-index: 99;
 }
 
-.info-blocks-animation-enter-done {
+.animation-enter-done {
   background: yellow;
   z-index: 99;
 }
-.info-blocks-animation-exit {
+.animation-exit {
   opacity: 1;
   background: green;
   z-index: 99;
 }
-.info-blocks-animation-exit-done {
+.animation-exit-done {
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 300ms, transform 300ms;
