@@ -11,7 +11,6 @@ import ButtonClip from '../button-clip';
 import { CSSTransition } from 'react-transition-group';
 import DefaultImage from '../audio-files/pic.jpg';
 import { IconClose, IconOpen, IconPause, IconPlay } from '../svg-icons';
-import PlayerAnimations from '../player-animations';
 
 function SoundPlayer({ playlist, onClick }) {
   const [currentTrack, setCurrentTrack] = useState(playlist[0]);
@@ -76,191 +75,213 @@ function SoundPlayer({ playlist, onClick }) {
       </p>
     ));
   };
-
+  const delayTs = 1000;
+  const delayBlock = 300;
   return (
-    <div className={cn(styles['player'], styles['player-is_open'])}>
-      <PlayerAnimations component={} />
-      <img
-        className={cn(styles['cover'], {
-          [styles['cover_is-invisible']]: !posterImg,
-        })}
-        src={
-          currentTrack.poster
-            ? currentTrack.poster
-            : (currentTrack.poster = DefaultImage)
-        }
-        alt="Иллюстрация для обложки"
-      />
-
-      <span
-        onClick={(_) => {
-          if (isPlaying) {
-            myPlayer.current.pause();
-            setIsPlaying(false);
-          } else {
-            myPlayer.current.play();
-            canPlay.current = true;
-            setIsPlaying(true);
-          }
-        }}
-        className={cn(styles['icon'], styles['icon_block_controls'])}
-      >
-        {isPlaying ? (
-          <IconPause className={styles['icon_type_pause']} />
-        ) : (
-          <IconPlay className={styles['icon_type_play']} />
-        )}
-      </span>
-
-      <div className={styles['info-play']}>
-        <div className={styles['description']}>
-          <span className={styles['treck-info']}>
-            {`${currentTrack.title} -  ${currentTrack.performer}`} <i>feat.</i>{' '}
-            {`${currentTrack.author}`}
-          </span>
-          <span className={styles['timer']}>{ctm(duration - currentTime)}</span>
-        </div>
-        <PlayerTimeline
-          currentTime={currentTime}
-          duration={duration}
-          onClick={(time) => {
-            myPlayer.current.currentTime = time;
+    <CSSTransition
+      in={buttonManagement}
+      timeout={delayTs}
+      classNames={{
+        enterActive: stylesAnimation['info-blocks-animation-enter'],
+        exitActive: stylesAnimation['info-blocks-animation-exit'],
+        // exitDone: stylesAnimation['info-blocks-animation-exit-done']
+      }}
+    >
+      <div className={cn(styles['player'], styles['player-is_open'])}>
+        <CSSTransition
+          in={buttonManagement}
+          timeout={delayTs}
+          classNames={{
+            enterActive: stylesAnimation['info-blocks-animation-enter'],
+            exitActive: stylesAnimation['info-blocks-animation-exit'],
+            // exitDone: stylesAnimation['info-blocks-animation-exit-done']
           }}
-        />
-      </div>
-      {buttonManagement && isLoggedIn && (
-        <ButtonClip clip={currentTrack.clip} />
-      )}
-      <button
-        className={cn(
-          styles['button'],
-          styles['button_block_info'],
-          styles['button_type_text'],
-          styles['button_color_transparent'],
-          {
-            [styles['button_is-invisible']]: !buttonManagement,
-          }
+        >
+          <img
+            className={cn(styles['cover'], {
+              [styles['cover_is-invisible']]: !posterImg,
+            })}
+            src={
+              currentTrack.poster
+                ? currentTrack.poster
+                : (currentTrack.poster = DefaultImage)
+            }
+            alt="Иллюстрация для обложки"
+          />
+        </CSSTransition>
+        <span
+          onClick={(_) => {
+            if (isPlaying) {
+              myPlayer.current.pause();
+              setIsPlaying(false);
+            } else {
+              myPlayer.current.play();
+              canPlay.current = true;
+              setIsPlaying(true);
+            }
+          }}
+          className={cn(styles['icon'], styles['icon_block_controls'])}
+        >
+          {isPlaying ? (
+            <IconPause className={styles['icon_type_pause']} />
+          ) : (
+            <IconPlay className={styles['icon_type_play']} />
+          )}
+        </span>
+
+        <div className={styles['info-play']}>
+          <div className={styles['description']}>
+            <span className={styles['treck-info']}>
+              {`${currentTrack.title} -  ${currentTrack.performer}`}{' '}
+              <i>feat.</i> {`${currentTrack.author}`}
+            </span>
+            <span className={styles['timer']}>
+              {ctm(duration - currentTime)}
+            </span>
+          </div>
+          <PlayerTimeline
+            currentTime={currentTime}
+            duration={duration}
+            onClick={(time) => {
+              myPlayer.current.currentTime = time;
+            }}
+          />
+        </div>
+        {buttonManagement && isLoggedIn && (
+          <ButtonClip clip={currentTrack.clip} />
         )}
-        onClick={() => {
-          setInfoButton(!infoButton);
-          setTest(!test);
-        }}
-      >
-        {infoButton ? 'Релизы' : 'Текст песни'}
-      </button>
-      <CSSTransition
-        in={buttonManagement}
-        timeout={500}
-        classNames={{
-          enterActive: stylesAnimation['info-blocks-animation-enter'],
-          enterDone: stylesAnimation['info-blocks-animation-enter-active'],
-          exitActive: stylesAnimation['info-blocks-animation-exit'],
-          // exitDone: stylesAnimation['info-blocks-animation-exit-done']
-        }}
-      >
-        <div
-          className={cn(styles['info-blocks'], {
-            [styles['info-blocks_is-invisible']]: !blocks,
-          })}
+        <button
+          className={cn(
+            styles['button'],
+            styles['button_block_info'],
+            styles['button_type_text'],
+            styles['button_color_transparent'],
+            {
+              [styles['button_is-invisible']]: !buttonManagement,
+            }
+          )}
+          onClick={() => {
+            setInfoButton(!infoButton);
+            setTest(!test);
+          }}
+        >
+          {infoButton ? 'Релизы' : 'Текст песни'}
+        </button>
+        <CSSTransition
+          in={buttonManagement}
+          timeout={delayTs}
+          classNames={{
+            enterActive: stylesAnimation['info-blocks-animation-enter'],
+            exitActive: stylesAnimation['info-blocks-animation-exit'],
+            // exitDone: stylesAnimation['info-blocks-animation-exit-done']
+          }}
         >
           <div
-            className={cn(
-              // скрытие релиза блока
-              styles['info-block'],
-              {
-                [styles['info-block_is-invisible']]: !test,
-              }
-            )}
+            className={cn(styles['info-blocks'], {
+              [styles['info-blocks_is-invisible']]: !blocks,
+            })}
           >
-            <Scrollbar
-              style={{
-                width: '100%',
-                height: 115,
-              }}
+            <div
+              className={cn(
+                // скрытие релиза блока
+                styles['info-block'],
+                {
+                  [styles['info-block_is-invisible']]: !test,
+                }
+              )}
             >
-              <h2 className={styles['info-block__title']}>
-                {allTracks.length > 1 ? 'Релизы' : 'Пока у нас только 1 релиз'}
-              </h2>
-              <ul className={styles['info-block__list']}>
-                {allTracks.map((item) => {
-                  if (item.id === currentTrack.id) {
-                    return null;
-                  }
-                  return (
-                    <PlayerItems
-                      item={item}
-                      key={item.id}
-                      onClick={(item) => {
-                        setCurrentTrack(item);
-                        if (isPlaying) {
-                          setIsPlaying(true);
-                        }
-                      }}
-                    />
-                  );
-                })}
-              </ul>
-            </Scrollbar>
-          </div>
+              <Scrollbar
+                style={{
+                  width: '100%',
+                  height: 115,
+                }}
+              >
+                <h2 className={styles['info-block__title']}>
+                  {allTracks.length > 1
+                    ? 'Релизы'
+                    : 'Пока у нас только 1 релиз'}
+                </h2>
+                <ul className={styles['info-block__list']}>
+                  {allTracks.map((item) => {
+                    if (item.id === currentTrack.id) {
+                      return null;
+                    }
+                    return (
+                      <PlayerItems
+                        item={item}
+                        key={item.id}
+                        onClick={(item) => {
+                          setCurrentTrack(item);
+                          if (isPlaying) {
+                            setIsPlaying(true);
+                          }
+                        }}
+                      />
+                    );
+                  })}
+                </ul>
+              </Scrollbar>
+            </div>
 
-          <div
-            className={cn(
-              // скрытие текста блока
-              styles['info-block'],
-              {
-                [styles['info-block_is-invisible']]: test,
-              }
-            )}
-          >
-            <Scrollbar
-              style={{
-                width: '100%',
-                height: 115,
-              }}
+            <div
+              className={cn(
+                // скрытие текста блока
+                styles['info-block'],
+                {
+                  [styles['info-block_is-invisible']]: test,
+                }
+              )}
             >
-              <h2 className={styles['info-block__title']}>Текст песни:</h2>
-              {getTextBlock(currentTrack.text)}
-            </Scrollbar>
+              <Scrollbar
+                style={{
+                  width: '100%',
+                  height: 115,
+                }}
+              >
+                <h2 className={styles['info-block__title']}>Текст песни:</h2>
+                {getTextBlock(currentTrack.text)}
+              </Scrollbar>
+            </div>
           </div>
-        </div>
-      </CSSTransition>
+        </CSSTransition>
 
-      <span //Кнопка с крестиком
-        className={cn(styles['icon'], styles['icon_block_management'])}
-        onClick={() => {
-          setButtonManagement(!buttonManagement); // Меняем слушатель кнопки Релиз/Текст
-          setBlock(!blocks);
-          setPosterImg(!posterImg); // НЕ ТРОГАТЬ
-          blurHandler();
-          if (buttonManagement === false) {
-            setButtonManagement(!buttonManagement);
-          }
-        }}
-      >
-        {buttonManagement ? (
-          <IconClose className={styles['icon_type_close']} />
-        ) : (
-          <IconOpen className={styles['icon_type_open']} />
-        )}
-      </span>
+        <span //Кнопка с крестиком
+          className={cn(styles['icon'], styles['icon_block_management'])}
+          onClick={() => {
+            setButtonManagement(!buttonManagement); // Меняем слушатель кнопки Релиз/Текст
+            setBlock(!blocks);
+            setPosterImg(!posterImg); // НЕ ТРОГАТЬ
+            blurHandler();
+            if (buttonManagement === false) {
+              setButtonManagement(!buttonManagement);
+            }
+          }}
+        >
+          {buttonManagement ? (
+            <IconClose className={styles['icon_type_close']} />
+          ) : (
+            <IconOpen className={styles['icon_type_open']} />
+          )}
+        </span>
 
-      <audio
-        className={styles['audio']}
-        src={currentTrack.audioFile}
-        ref={myPlayer}
-        onPlay={onPlay}
-        onPause={onPause}
-        onCanPlay={onCanPlay}
-        onEnded={onEnded}
-        onTimeUpdate={onTimeUpdate}
-        loop={false} // Не играет повторно, true играет
-        onLoadedData={(_) => {
-          setDuration(myPlayer.current.duration);
-        }}
-      >
-        Your browser doesn't support the tag "audio"
-      </audio>
-    </div>
+        <audio
+          className={styles['audio']}
+          src={currentTrack.audioFile}
+          ref={myPlayer}
+          onPlay={onPlay}
+          onPause={onPause}
+          onCanPlay={onCanPlay}
+          onEnded={onEnded}
+          onTimeUpdate={onTimeUpdate}
+          loop={false} // Не играет повторно, true играет
+          onLoadedData={(_) => {
+            setDuration(myPlayer.current.duration);
+          }}
+        >
+          Your browser doesn't support the tag "audio"
+        </audio>
+      </div>
+    </CSSTransition>
   );
 }
 
