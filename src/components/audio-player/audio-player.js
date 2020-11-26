@@ -2,11 +2,13 @@ import React, { useRef, useState } from 'react';
 import { Scrollbar } from 'react-scrollbars-custom';
 import cn from 'classnames';
 import styles from './audio-player.module.css';
+import stylesAnimation from './audio-player-animation.module.css';
 import ctm from '../../utils/convert-to-minutes';
 import throttling from '../../utils/throttling';
 import PlayerTimeline from '../player-timeline';
 import PlayerItems from '../player-items/player-items';
 import ButtonClip from '../button-clip';
+import { CSSTransition } from 'react-transition-group';
 import DefaultImage from '../audio-files/pic.jpg';
 import { IconClose, IconOpen, IconPause, IconPlay } from '../svg-icons';
 
@@ -144,71 +146,77 @@ function SoundPlayer({ playlist, onClick }) {
       >
         {infoButton ? 'Релизы' : 'Текст песни'}
       </button>
-      <div
-        className={cn(styles['info-blocks'], {
-          [styles['info-blocks_is-invisible']]: !blocks,
-        })}
+      <CSSTransition
+        in={buttonManagement}
+        timeout={500}
+        classNames={stylesAnimation['info-blocks-animation']}
       >
         <div
-          className={cn(
-            // скрытие релиза блока
-            styles['info-block'],
-            {
-              [styles['info-block_is-invisible']]: !test,
-            }
-          )}
+          className={cn(styles['info-blocks'], {
+            [styles['info-blocks_is-invisible']]: !blocks,
+          })}
         >
-          <Scrollbar
-            style={{
-              width: '100%',
-              height: 115,
-            }}
+          <div
+            className={cn(
+              // скрытие релиза блока
+              styles['info-block'],
+              {
+                [styles['info-block_is-invisible']]: !test,
+              }
+            )}
           >
-            <h2 className={styles['info-block__title']}>
-              {allTracks.length > 1 ? 'Релизы' : 'Пока у нас только 1 релиз'}
-            </h2>
-            <ul className={styles['info-block__list']}>
-              {allTracks.map((item) => {
-                if (item.id === currentTrack.id) {
-                  return null;
-                }
-                return (
-                  <PlayerItems
-                    item={item}
-                    key={item.id}
-                    onClick={(item) => {
-                      setCurrentTrack(item);
-                      if (isPlaying) {
-                        setIsPlaying(true);
-                      }
-                    }}
-                  />
-                );
-              })}
-            </ul>
-          </Scrollbar>
-        </div>
+            <Scrollbar
+              style={{
+                width: '100%',
+                height: 115,
+              }}
+            >
+              <h2 className={styles['info-block__title']}>
+                {allTracks.length > 1 ? 'Релизы' : 'Пока у нас только 1 релиз'}
+              </h2>
+              <ul className={styles['info-block__list']}>
+                {allTracks.map((item) => {
+                  if (item.id === currentTrack.id) {
+                    return null;
+                  }
+                  return (
+                    <PlayerItems
+                      item={item}
+                      key={item.id}
+                      onClick={(item) => {
+                        setCurrentTrack(item);
+                        if (isPlaying) {
+                          setIsPlaying(true);
+                        }
+                      }}
+                    />
+                  );
+                })}
+              </ul>
+            </Scrollbar>
+          </div>
 
-        <div
-          className={cn(
-            // скрытие текста блока
-            styles['info-block'],
-            {
-              [styles['info-block_is-invisible']]: test,
-            }
-          )}
-        >
-          <Scrollbar
-            style={{
-              width: '100%',
-              height: 115,
-            }}
+          <div
+            className={cn(
+              // скрытие текста блока
+              styles['info-block'],
+              {
+                [styles['info-block_is-invisible']]: test,
+              }
+            )}
           >
-            <h2 className={styles['info-block__title']}>Текст песни:</h2>
-            {getTextBlock(currentTrack.text)}
-          </Scrollbar>
+            <Scrollbar
+              style={{
+                width: '100%',
+                height: 115,
+              }}
+            >
+              <h2 className={styles['info-block__title']}>Текст песни:</h2>
+              {getTextBlock(currentTrack.text)}
+            </Scrollbar>
+          </div>
         </div>
-      </div>
+      </CSSTransition>
 
       <span //Кнопка с крестиком
         className={cn(styles['icon'], styles['icon_block_management'])}
