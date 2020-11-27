@@ -1,7 +1,7 @@
 import styles from './app.module.css';
 import HeaderMusic from '../header-music/header-music';
 import Root from '../root/root';
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import Footer from '../footer';
 import { config } from '../../config';
 import { tracks } from '../../tracks';
@@ -26,6 +26,7 @@ function App() {
   return (
     <div className={styles['app']}>
       <ParticlesBg type={nextAnimation} bg={true} />
+
       <HeaderMusic config={config} tracks={tracks} />
       <div className={styles['page']}>
         <div className={styles['page__container']}>
