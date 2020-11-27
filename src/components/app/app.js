@@ -10,7 +10,7 @@ import ParticlesBg from 'particles-bg';
 function App() {
   return (
     <div className={styles['app']}>
-      <ParticlesBg type="random" bg={true} style={{ zIndex: 1 }} />
+      <ParticlesBg type="random" bg={true} />
       <HeaderMusic config={config} tracks={tracks} />
       <div className={styles['page']}>
         <Root />
