@@ -75,8 +75,7 @@ function SoundPlayer({ playlist, onClick }) {
       </p>
     ));
   };
-  const delayTs = 1500;
-  const delayBlock = 300;
+  const delayTs = 2000;
   return (
     <CSSTransition
       in={buttonManagement}
