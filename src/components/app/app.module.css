@@ -28,7 +28,7 @@
   background-image: url('./header-photo.png');
   background-size: cover;
   background-attachment: fixed;
-  z-index: -2;
+  z-index: 0;
 }
 .page {
   margin: 0 auto;
