@@ -80,7 +80,7 @@
 .button:hover {
   box-shadow: lightskyblue 0 0 0 2px;
   transition-duration: 0.3s;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .button_color_transparent {
@@ -106,36 +106,31 @@
   height: 20px;
 }
 
-.icon_type_play {
-  padding-top: 5px;
-}
-
+.icon_type_play,
 .icon_type_pause {
   padding-top: 5px;
 }
 
-.icon_type_open {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  padding-top: 5px;
-}
-
+.icon_type_open,
 .icon_type_close {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   padding-top: 5px;
 }
-.icon_type_close:hover {
-  transform: scale(1.5);
-  transition-duration: 0.5s;
-}
-.icon_type_play:hover {
-  transform: scale(1.5);
-  transition-duration: 0.5s;
-}
 
+.icon_type_play:hover {
+  transform: scale(1.7);
+  transition-duration: 0.5s;
+}
+.icon_block_management:hover {
+  transform: scale(1.3);
+  transition-duration: 0.3s;
+}
+.icon_type_close:hover {
+  transform: scale(1.3);
+  transition-duration: 0.3s;
+}
 .info-block {
   color: #fff;
   padding-right: 10px;
