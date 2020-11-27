@@ -4,7 +4,7 @@ import Turbina from '../turbina/Turbina';
 import SoundPlayer from '../audio-player/audio-player';
 import IconBannerHeader from '../svg-icons/IconBannerHeader';
 import IconHeaderExit from '../svg-icons/IconHeaderExit';
-
+import ParticlesBg from 'particles-bg';
 import React, { useState } from 'react';
 
 function HeaderMusic({ config, tracks }) {
@@ -63,6 +63,7 @@ function HeaderMusic({ config, tracks }) {
         </div>
       </div>
       <Turbina hdBlur={blur} />
+
       <SoundPlayer
         playlist={tracks.playlist}
         onClick={(status) => {

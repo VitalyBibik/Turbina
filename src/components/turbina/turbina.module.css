@@ -1,6 +1,7 @@
 .banner {
   width: 75%;
   margin: 0 auto;
+  z-index: 2;
 }
 
 .banner_for_player {
