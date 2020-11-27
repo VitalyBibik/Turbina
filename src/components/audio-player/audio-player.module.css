@@ -77,6 +77,11 @@
   justify-content: center;
   margin-top: 2px;
 }
+.button:hover {
+  box-shadow: lightskyblue 0 0 0 2px;
+  transition-duration: 0.3s;
+  transform: scale(1.1);
+}
 
 .button_color_transparent {
   background-color: transparent;
@@ -121,6 +126,14 @@
   height: 24px;
   border-radius: 50%;
   padding-top: 5px;
+}
+.icon_type_close:hover {
+  transform: scale(1.5);
+  transition-duration: 0.5s;
+}
+.icon_type_play:hover {
+  transform: scale(1.5);
+  transition-duration: 0.5s;
 }
 
 .info-block {

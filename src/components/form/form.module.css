@@ -47,6 +47,11 @@
   border-radius: 50%;
   margin-right: 8px;
   border: 1px solid #000;
+  cursor: pointer;
+}
+.form__span:hover {
+  transform: scale(1.4);
+  transition-duration: 0.4s;
 }
 
 .form__button {
@@ -59,11 +64,20 @@
   margin-top: 43px;
   cursor: pointer;
 }
+.form__button:hover {
+  transition-duration: 0.3s;
+  transform: scale(1.05);
+}
 .form__link {
   color: #000;
   font-size: 16px;
   line-height: 22px;
   cursor: pointer;
+}
+.form__link:hover {
+  opacity: 0.8;
+  transition-duration: 0.5s;
+  font-size: 24px;
 }
 .form__text {
   display: inline;

@@ -20,7 +20,7 @@
 }
 .footer__link:hover {
   opacity: 0.8;
-  transition-delay: 0.3ms;
+  transition-duration: 0.3s;
   color: lightskyblue;
 }
 
