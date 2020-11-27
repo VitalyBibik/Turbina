@@ -13,7 +13,9 @@ function App() {
       <ParticlesBg type="random" bg={true} />
       <HeaderMusic config={config} tracks={tracks} />
       <div className={styles['page']}>
-        <Root />
+        <div className={styles['page__container']}>
+          <Root />
+        </div>
       </div>
       <Footer config={config} />
     </div>

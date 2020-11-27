@@ -1,8 +1,12 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  margin: 20px 15px 0 15px;
   padding-bottom: 20px;
+  max-width: 1440px;
+  margin: 20px auto 0;
+  padding-right: 10px;
+  padding-left: 10px;
+  box-sizing: border-box;
 }
 
 .footer__text {
