@@ -1,4 +1,5 @@
 import styles from './section-tezis.module.css';
+import React from 'react';
 
 function SectionTezis({ text }) {
   return (

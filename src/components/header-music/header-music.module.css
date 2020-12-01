@@ -7,6 +7,10 @@
 .header-music_for_player {
   filter: blur(0);
 }
+.banner {
+  width: auto;
+  margin-left: 20px;
+}
 
 .header-block {
   color: white;
@@ -14,6 +18,7 @@
   text-decoration: none;
   padding: 8px 20px 8px 20px;
   margin-bottom: 10px;
+  outline: none;
 }
 .header-link:hover {
   color: #ffff00;
@@ -22,8 +27,7 @@
 }
 
 .header-block:hover {
-  transform: scale(1.1);
-  transition-delay: 0.5ms;
+  transition-duration: 0.5s;
 }
 
 .header-block_mobile {
@@ -63,40 +67,31 @@
   content: ' ↗';
 }
 .container {
-  /* background-image: url('./header-photo.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  */
   position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .container__header-music {
   display: flex;
   flex-direction: row;
-  /* padding-bottom: 30px; */
   padding-top: 20px;
+  z-index: 3;
 }
 .menu {
   position: relative;
 }
 .menu__burger {
-  background-image: url('./header-exit.png');
-  width: 4px;
-  height: 4px;
-  background-repeat: no-repeat;
-  padding: 10px;
-  background-position: center;
-  background-size: 80%;
+  display: none;
 }
 
-@media screen and (min-width: 320px) and (max-width: 699px) {
+@media screen and (max-width: 699px) {
   .header-music_for_player {
     filter: blur(4px);
   }
-
   .header-block_mobile {
     display: block;
     position: absolute;
@@ -116,5 +111,10 @@
   .header-block-ul__open {
     display: block;
     margin-top: 6px;
+  }
+  .menu__burger {
+    display: block;
+    width: 29px;
+    margin-right: 20px;
   }
 }

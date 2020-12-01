@@ -43,9 +43,8 @@ const Form = () => (
           value={values.fullName}
           required
         />
-        <span className={styles['test']}>
-          {' '}
-          {errors.fullName && touched.fullName && errors.fullName}{' '}
+        <span className={styles['form__error']}>
+          {errors.fullName && touched.fullName && errors.fullName}
         </span>
         <input
           className={styles['form__input']}
@@ -59,9 +58,8 @@ const Form = () => (
           value={values.mobilePhone}
           required
         />
-        <span className={styles['test']}>
-          {' '}
-          {errors.mobilePhone && touched.mobilePhone && errors.mobilePhone}{' '}
+        <span className={styles['form__error']}>
+          {errors.mobilePhone && touched.mobilePhone && errors.mobilePhone}
         </span>
         <input
           className={styles['form__input']}
@@ -73,9 +71,8 @@ const Form = () => (
           value={values.email}
           required
         />
-        <span className={styles['test']}>
-          {' '}
-          {errors.email && touched.email && errors.email}{' '}
+        <span className={styles['form__error']}>
+          {errors.email && touched.email && errors.email}
         </span>
         <input
           className={styles['form__input']}
@@ -87,10 +84,9 @@ const Form = () => (
           value={values.userText}
           required
         />
-        <span className={styles['test']}>
-          {' '}
-          {errors.userText && touched.userText && errors.userText}{' '}
-        </span>
+        {errors.userText && touched.userText && errors.userText && (
+          <span className={styles['form__error']}>{errors.userText}</span>
+        )}
         <label className={styles['form__check']}>
           <Field
             type="checkbox"
@@ -98,7 +94,7 @@ const Form = () => (
             className={styles['form__ellipse']}
             required
           />
-          <span className={styles['form__span']}></span>
+          <span className={styles['form__span']} />
           {
             <p className={styles['form__text']}>
               Согласен с &#160;

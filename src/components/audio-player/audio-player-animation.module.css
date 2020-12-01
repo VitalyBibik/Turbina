@@ -1,0 +1,49 @@
+.info-blocks-animation-enter {
+  animation-name: slideInUp;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+.info-blocks-animation-exit {
+  animation-name: slideOutDown;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInUp {
+  0% {
+    transform: translateY(150%);
+    visibility: visible;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideInUp {
+  0% {
+    transform: translateY(150%);
+    visibility: visible;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideOutDown {
+  0% {
+    visibility: visible;
+    transform: translateY(110%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideOutDown {
+  0% {
+    visibility: visible;
+    transform: translateY(110%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

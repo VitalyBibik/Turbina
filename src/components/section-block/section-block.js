@@ -2,6 +2,7 @@ import styles from './section-block.module.css';
 import SectionTitle from '../section-title/section-title';
 import SectionText from '../section-text/section-text';
 import SectionTezis from '../section-tezis/section-tezis';
+import React from 'react';
 
 function SectionBlock({ sectionBlock }) {
   return (

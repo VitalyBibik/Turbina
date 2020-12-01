@@ -1,15 +1,14 @@
 import styles from './header-music.module.css';
-import Banner from '../banner/index';
 import cn from 'classnames';
-import Turbina from '../turbina/index';
-import SoundPlayer from '../audio-player/index';
+import Turbina from '../turbina/Turbina';
+import SoundPlayer from '../audio-player/audio-player';
+import IconBannerHeader from '../svg-icons/IconBannerHeader';
+import IconHeaderExit from '../svg-icons/IconHeaderExit';
 import React, { useState } from 'react';
 
-function HeaderMusic({ config }) {
+function HeaderMusic({ config, tracks, togglePlaying }) {
   const [open, setOpen] = useState(false);
-
   const [blur, setBlur] = useState(false);
-
   const linkRender = config.stream.map((element) => {
     return (
       <li className={styles['header-block']} key={element.id}>
@@ -30,36 +29,41 @@ function HeaderMusic({ config }) {
       <div
         className={cn(
           styles['header-music'],
-          blur && styles['header-music_for_player'],
+          {
+            [styles['header-music_for_player']]: blur,
+          },
           styles['container__header-music']
         )}
       >
-        <Banner />
-        <div className={styles['menu']}>
-          <button
-            className={cn(
-              styles['header-music__button'],
-              styles['header-block'],
-              styles['header-block_mobile'],
-              open && styles['menu__burger']
-            )}
-            onClick={() => setOpen(!open)}
-          >
-            {open ? '' : 'Стриминги'}
-          </button>
+        <IconBannerHeader className={styles['banner']} />
+        <div className={styles['menu']} onClick={() => setOpen(!open)}>
+          {open ? (
+            <IconHeaderExit className={styles['menu__burger']} />
+          ) : (
+            <button
+              className={cn(
+                styles['header-music__button'],
+                styles['header-block'],
+                styles['header-block_mobile']
+              )}
+            >
+              Стриминги
+            </button>
+          )}
           <ul
-            className={cn(
-              styles['header-block-ul'],
-              open && styles['header-block-ul__open']
-            )}
+            className={cn(styles['header-block-ul'], {
+              [styles['header-block-ul__open']]: open,
+            })}
           >
             {linkRender}
           </ul>
         </div>
       </div>
       <Turbina hdBlur={blur} />
+
       <SoundPlayer
-        playlist={config.playlist}
+        playlist={tracks.playlist}
+        togglePlay={togglePlaying}
         onClick={(status) => {
           setBlur(!status);
         }}
