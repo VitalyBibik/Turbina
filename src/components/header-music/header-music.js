@@ -6,11 +6,9 @@ import IconBannerHeader from '../svg-icons/IconBannerHeader';
 import IconHeaderExit from '../svg-icons/IconHeaderExit';
 import React, { useState } from 'react';
 
-function HeaderMusic({ config, tracks }) {
+function HeaderMusic({ config, tracks, togglePlaying }) {
   const [open, setOpen] = useState(false);
-
   const [blur, setBlur] = useState(false);
-
   const linkRender = config.stream.map((element) => {
     return (
       <li className={styles['header-block']} key={element.id}>
@@ -49,7 +47,7 @@ function HeaderMusic({ config, tracks }) {
                 styles['header-block_mobile']
               )}
             >
-              {'Стриминги'}
+              Стриминги
             </button>
           )}
           <ul
@@ -65,6 +63,7 @@ function HeaderMusic({ config, tracks }) {
 
       <SoundPlayer
         playlist={tracks.playlist}
+        togglePlay={togglePlaying}
         onClick={(status) => {
           setBlur(!status);
         }}

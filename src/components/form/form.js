@@ -44,8 +44,7 @@ const Form = () => (
           required
         />
         <span className={styles['form__error']}>
-          {' '}
-          {errors.fullName && touched.fullName && errors.fullName}{' '}
+          {errors.fullName && touched.fullName && errors.fullName}
         </span>
         <input
           className={styles['form__input']}
@@ -60,8 +59,7 @@ const Form = () => (
           required
         />
         <span className={styles['form__error']}>
-          {' '}
-          {errors.mobilePhone && touched.mobilePhone && errors.mobilePhone}{' '}
+          {errors.mobilePhone && touched.mobilePhone && errors.mobilePhone}
         </span>
         <input
           className={styles['form__input']}
@@ -74,8 +72,7 @@ const Form = () => (
           required
         />
         <span className={styles['form__error']}>
-          {' '}
-          {errors.email && touched.email && errors.email}{' '}
+          {errors.email && touched.email && errors.email}
         </span>
         <input
           className={styles['form__input']}
@@ -87,12 +84,9 @@ const Form = () => (
           value={values.userText}
           required
         />
-        <span className={styles['form__error']}>
-          {' '}
-          {errors.userText && touched.userText && errors.userText && (
-            <span className={styles['form__error']}>{errors.userText}</span>
-          )}
-        </span>
+        {errors.userText && touched.userText && errors.userText && (
+          <span className={styles['form__error']}>{errors.userText}</span>
+        )}
         <label className={styles['form__check']}>
           <Field
             type="checkbox"

@@ -12,10 +12,9 @@ import { CSSTransition } from 'react-transition-group';
 import DefaultImage from '../audio-files/pic.jpg';
 import { IconClose, IconOpen, IconPause, IconPlay } from '../svg-icons';
 
-function SoundPlayer({ playlist, onClick }) {
+function SoundPlayer({ playlist, onClick, togglePlay }) {
   const [currentTrack, setCurrentTrack] = useState(playlist[0]);
   const [allTracks] = useState(playlist);
-
   const [test, setTest] = useState(false); // info-blocks с 2 блоками информации
   const [posterImg, setPosterImg] = useState(false); // openPoster/hidePoster
   const [buttonManagement, setButtonManagement] = useState(false); // openBlock/hideBlock
@@ -113,10 +112,12 @@ function SoundPlayer({ playlist, onClick }) {
             if (isPlaying) {
               myPlayer.current.pause();
               setIsPlaying(false);
+              togglePlay(isPlaying);
             } else {
               myPlayer.current.play();
               canPlay.current = true;
               setIsPlaying(true);
+              togglePlay(isPlaying);
             }
           }}
           className={cn(styles['icon'], styles['icon_block_controls'])}
@@ -213,6 +214,7 @@ function SoundPlayer({ playlist, onClick }) {
                           setCurrentTrack(item);
                           if (isPlaying) {
                             setIsPlaying(true);
+                            togglePlay(isPlaying);
                           }
                         }}
                       />

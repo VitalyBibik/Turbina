@@ -124,11 +124,9 @@
   transform: scale(1.7);
   transition-duration: 0.5s;
 }
-.icon_block_management:hover {
-  transform: scale(1.3);
-  transition-duration: 0.3s;
-}
-.icon_type_close:hover {
+
+.icon_type_close:hover,
+.icon_block_management {
   transform: scale(1.3);
   transition-duration: 0.3s;
 }

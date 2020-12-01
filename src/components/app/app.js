@@ -1,7 +1,7 @@
 import styles from './app.module.css';
 import HeaderMusic from '../header-music/header-music';
 import Root from '../root/root';
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import Footer from '../footer';
 import { config } from '../../config';
 import { tracks } from '../../tracks';
@@ -22,12 +22,16 @@ function App() {
   const max = animationArray.length - 1;
   let nextAnimation =
     animationArray[Math.floor(min + Math.random() * (max + 1 - min))];
+  const [playerIsPlaying, setPlayerIsPlaying] = useState(false);
+  const togglePlay = () => {
+    setPlayerIsPlaying(!playerIsPlaying);
+  };
 
   return (
     <div className={styles['app']}>
-      <ParticlesBg type={nextAnimation} bg={true} />
+      {playerIsPlaying && <ParticlesBg type={nextAnimation} bg={true} />}
 
-      <HeaderMusic config={config} tracks={tracks} />
+      <HeaderMusic config={config} tracks={tracks} togglePlaying={togglePlay} />
       <div className={styles['page']}>
         <div className={styles['page__container']}>
           <Root />
