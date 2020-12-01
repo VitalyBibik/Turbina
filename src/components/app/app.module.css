@@ -1,24 +1,3 @@
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../../Vendor/fonts/Inter/Inter-Regular-slnt=0.ttf')
-    format('truetype');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../../Vendor/fonts/Inter/Inter-Medium-slnt=0.ttf')
-    format('truetype');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: bold;
-  src: url('../../Vendor/fonts/Inter/Inter-Bold-slnt=0.ttf') format('truetype');
-}
-
 .app {
   position: relative;
   font-family: Inter, Helvetica, Arial, sans-serif;
