@@ -165,7 +165,7 @@ function SoundPlayer({ playlist, onClick, togglePlay }) {
             setTest(!test);
           }}
         >
-          {infoButton ? 'Релизы' : 'Текст песни'}
+          {!infoButton ? 'Релизы' : 'Текст песни'}
         </button>
         <CSSTransition
           in={buttonManagement}
